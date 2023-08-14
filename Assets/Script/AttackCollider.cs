@@ -27,11 +27,14 @@ public class AttackCollider : MonoBehaviour
             if(player.GetComponent<PlayerController>().comboNum == 1) { 
             
                 collision.GetComponent<Character>().life--;
+                collision.GetComponent<Character>().Skin.GetComponent<Animator>().Play("Hit");
 
             }
             else {
 
                 collision.GetComponent<Character>().life -= 2;
+                collision.GetComponent<Character>().Skin.GetComponent<Animator>().Play("Hit");
+
 
             }
         }

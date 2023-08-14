@@ -21,6 +21,7 @@ public class KeeperAttackCollider : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<Character>().life--;
+            
         }
     }
 }
