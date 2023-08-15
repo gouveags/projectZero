@@ -27,7 +27,7 @@ public class AttackCollider : MonoBehaviour
             if(player.GetComponent<PlayerController>().comboNum == 1) { 
             
                 collision.GetComponent<Character>().life--;
-                collision.GetComponent<Character>().Skin.GetComponent<Animator>().Play("Hit");
+                collision.GetComponent<Character>().Skin.GetComponent<Animator>().Play("Hit",-1);
 
             }
             else {

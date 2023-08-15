@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public int comboNum;
     public float comboTime;
     public float dashTime;
-
+    public float deathDelay = 2.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,11 +30,12 @@ public class PlayerController : MonoBehaviour
     {
         if (GetComponent<Character>().life <= 0)
         {
+            rb.gravityScale = 1;
             this.enabled = false;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Invoke("LoadNextScene", deathDelay);
+            
         }
-
-
+       
         dashTime = dashTime + Time.deltaTime;
         if (Input.GetButtonDown("Fire2") && dashTime > 1)
         {
@@ -48,10 +49,6 @@ public class PlayerController : MonoBehaviour
         {
             rb.gravityScale = 1;
         }
-
-
-
-
 
         comboTime = comboTime + Time.deltaTime;
         if (Input.GetButtonDown("Fire1") && comboTime > 0.5)
@@ -69,7 +66,6 @@ public class PlayerController : MonoBehaviour
             
         }
 
-
         bool canJump = Physics2D.OverlapCircle(floor.position, 0.1f, FloorLayer);
         if (canJump && Input.GetButtonDown("Jump"))
         {
@@ -80,7 +76,6 @@ public class PlayerController : MonoBehaviour
         }
         vel = new Vector2(Input.GetAxisRaw("Horizontal"),rb.velocity.y);
 
-
         if (Input.GetAxisRaw("Horizontal") != 0) {
             skin.localScale = new Vector3(Input.GetAxisRaw("Horizontal"), 1, 1);
             skin.GetComponent<Animator>().SetBool("PlayerRun", true);
@@ -90,7 +85,10 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
+    private void LoadNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     private void FixedUpdate()
     {
         if(dashTime > 0.3) {
