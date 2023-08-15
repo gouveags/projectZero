@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+using CoreMechanics;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +21,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        transform.position = CheckpointController.currentCheckpoint;
         
     }
 
@@ -27,6 +31,7 @@ public class PlayerController : MonoBehaviour
         if (GetComponent<Character>().life <= 0)
         {
             this.enabled = false;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
 
