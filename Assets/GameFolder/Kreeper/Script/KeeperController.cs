@@ -27,9 +27,9 @@ public class KeeperController : MonoBehaviour
         {
             KeeperRange.GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<CapsuleCollider2D>().enabled = false;
-            GetComponent<Rigidbody2D>().gravityScale = 0;
             this.enabled = false;
         }
+        
 
         if (Skin.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("KeeperAttack"))
         {
