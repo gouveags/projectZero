@@ -31,7 +31,7 @@ public class BatController : MonoBehaviour
 
         if (Vector2.Distance(transform.position, Player.position)>0.2f) {
             attackTime = 0;
-            transform.position = Vector2.MoveTowards(transform.position, Player.position, 0.5f * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, Player.position, 6.0f * Time.deltaTime);
         }
         else
         {

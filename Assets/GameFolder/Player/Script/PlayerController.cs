@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
             dashTime = 0;
             skin.GetComponent<Animator>().Play("PlayerDash", -1);
             rb.velocity = Vector2.zero;
-            rb.AddForce(new Vector2(skin.localScale.x * 150,0));
+            rb.AddForce(new Vector2(skin.localScale.x * 400,0));
             rb.gravityScale = 0;
         }
         if (dashTime > 0.3)
@@ -71,10 +71,10 @@ public class PlayerController : MonoBehaviour
         {
             skin.GetComponent<Animator>().Play("PlayerJump", -1);
             rb.velocity = Vector2.zero;
-            rb.AddForce(new Vector2(0, 150));
+            rb.AddForce(new Vector2(0, 200));
             rb.gravityScale = 1;
         }
-        vel = new Vector2(Input.GetAxisRaw("Horizontal"),rb.velocity.y);
+        vel = new Vector2(Input.GetAxisRaw("Horizontal")*5,rb.velocity.y);
 
         if (Input.GetAxisRaw("Horizontal") != 0) {
             skin.localScale = new Vector3(Input.GetAxisRaw("Horizontal"), 1, 1);
