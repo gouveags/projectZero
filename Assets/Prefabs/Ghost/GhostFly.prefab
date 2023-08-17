@@ -145,6 +145,7 @@ MonoBehaviour:
   a: {fileID: 5631075905875096650}
   b: {fileID: 5631075905632765271}
   Skin: {fileID: 5631075906843221756}
+  velGhot: 5
   goRight: 0
 --- !u!58 &5631075906799078662
 CircleCollider2D:
@@ -159,9 +160,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.04697572, y: 0}
   serializedVersion: 2
-  m_Radius: 0.23221315
+  m_Radius: 0.18523744
 --- !u!1 &5631075906843221757
 GameObject:
   m_ObjectHideFlags: 0

@@ -396,6 +396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   a: {fileID: 1266229059992818288}
   b: {fileID: 1266229061654296699}
+  velKeeper: 2.5
   Skin: {fileID: 1266229059977902024}
   KeeperRange: {fileID: 1266229060965894076}
   goRight: 1

@@ -7,6 +7,7 @@ public class GhostController : MonoBehaviour
     public Transform a;
     public Transform b;
     public Transform Skin;
+    public float velGhot;
     public bool goRight;
 
 
@@ -27,7 +28,7 @@ public class GhostController : MonoBehaviour
                 transform.position = a.position;
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, b.position, 2f * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, b.position, velGhot * Time.deltaTime); ;
         }
         else
         {
@@ -37,7 +38,7 @@ public class GhostController : MonoBehaviour
                 transform.position = b.position;
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, a.position, 2f * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, a.position, velGhot * Time.deltaTime);
         }
     }
 

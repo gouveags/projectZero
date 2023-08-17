@@ -6,7 +6,7 @@ public class KeeperController : MonoBehaviour
 {
     public Transform a;
     public Transform b;
-
+    public float velKeeper;
     public Transform Skin;
     public Transform KeeperRange;
 
@@ -45,7 +45,7 @@ public class KeeperController : MonoBehaviour
                 goRight = false;
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, b.position, 0.2f * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, b.position, velKeeper * Time.deltaTime);
         }
         else
         {
@@ -55,7 +55,7 @@ public class KeeperController : MonoBehaviour
                 goRight = true;
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, a.position, 0.2f * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, a.position, velKeeper * Time.deltaTime);
         }
     }
 }
