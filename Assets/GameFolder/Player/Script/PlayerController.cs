@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public float comboTime;
     public float dashTime;
     public float deathDelay = 2.0f;
+    public int jumpForce;
+    public int gravidadeScale;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         if (GetComponent<Character>().life <= 0)
         {
-            rb.gravityScale = 1;
+            rb.gravityScale = gravidadeScale;
             this.enabled = false;
             Invoke("LoadNextScene", deathDelay);
             
@@ -47,7 +49,7 @@ public class PlayerController : MonoBehaviour
         }
         if (dashTime > 0.3)
         {
-            rb.gravityScale = 1;
+            rb.gravityScale = gravidadeScale;
         }
 
         comboTime = comboTime + Time.deltaTime;
@@ -66,13 +68,14 @@ public class PlayerController : MonoBehaviour
             
         }
 
-        bool canJump = Physics2D.OverlapCircle(floor.position, 0.1f, FloorLayer);
+        bool canJump = Physics2D.OverlapCircle(floor.position, 1f, FloorLayer);
         if (canJump && Input.GetButtonDown("Jump"))
         {
+     
             skin.GetComponent<Animator>().Play("PlayerJump", -1);
             rb.velocity = Vector2.zero;
-            rb.AddForce(new Vector2(0, 200));
-            rb.gravityScale = 1;
+            rb.AddForce(new Vector2(0, jumpForce ));
+            rb.gravityScale = gravidadeScale;
         }
         vel = new Vector2(Input.GetAxisRaw("Horizontal")*5,rb.velocity.y);
 
