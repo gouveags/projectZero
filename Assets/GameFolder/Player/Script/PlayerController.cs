@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float deathDelay = 2.0f;
     public int jumpForce;
     public int gravidadeScale;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //when player die 
+
         if (GetComponent<Character>().life <= 0)
         {
             rb.gravityScale = gravidadeScale;
@@ -38,6 +41,8 @@ public class PlayerController : MonoBehaviour
             
         }
        
+        //Control Dash
+
         dashTime = dashTime + Time.deltaTime;
         if (Input.GetButtonDown("Fire2") && dashTime > 1)
         {
@@ -52,8 +57,10 @@ public class PlayerController : MonoBehaviour
             rb.gravityScale = gravidadeScale;
         }
 
+        //Control combotime
+
         comboTime = comboTime + Time.deltaTime;
-        if (Input.GetButtonDown("Fire1") && comboTime > 0.5)
+        if (Input.GetButtonDown("Fire1") && comboTime > 0.5f)
         {
             comboNum++;
             if (comboNum>2) {
@@ -62,11 +69,12 @@ public class PlayerController : MonoBehaviour
             comboTime = 0;
             skin.GetComponent<Animator>().Play("PlayerAttack" + comboNum, -1);  
         }
-        if (comboTime >= 0.8)
+        if (comboTime >= 2)
         {
-            comboNum = 0;
-            
+            comboNum = 0;  
         }
+
+        //Sytem Jump
 
         bool canJump = Physics2D.OverlapCircle(floor.position, 1f, FloorLayer);
         if (canJump && Input.GetButtonDown("Jump"))
@@ -78,6 +86,9 @@ public class PlayerController : MonoBehaviour
             rb.gravityScale = gravidadeScale;
         }
         vel = new Vector2(Input.GetAxisRaw("Horizontal")*5,rb.velocity.y);
+
+
+        //Run and RunSword
 
         if (Input.GetAxisRaw("Horizontal") != 0 && comboNum == 0) {
             skin.localScale = new Vector3(Input.GetAxisRaw("Horizontal"), 1, 1);
@@ -97,12 +108,12 @@ public class PlayerController : MonoBehaviour
             skin.GetComponent<Animator>().SetBool("PlayerRunSword", false);
         }
 
-
     }
     private void LoadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
     private void FixedUpdate()
     {
         if(dashTime > 0.3) {
