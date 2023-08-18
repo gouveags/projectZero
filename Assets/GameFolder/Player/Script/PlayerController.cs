@@ -79,13 +79,24 @@ public class PlayerController : MonoBehaviour
         }
         vel = new Vector2(Input.GetAxisRaw("Horizontal")*5,rb.velocity.y);
 
-        if (Input.GetAxisRaw("Horizontal") != 0) {
+        if (Input.GetAxisRaw("Horizontal") != 0 && comboNum == 0) {
             skin.localScale = new Vector3(Input.GetAxisRaw("Horizontal"), 1, 1);
             skin.GetComponent<Animator>().SetBool("PlayerRun", true);
         }
         else { 
             skin.GetComponent<Animator>().SetBool("PlayerRun", false); 
         }
+
+        if (Input.GetAxisRaw("Horizontal") != 0 && comboNum >= 1)
+        {
+            skin.localScale = new Vector3(Input.GetAxisRaw("Horizontal"), 1, 1);
+            skin.GetComponent<Animator>().SetBool("PlayerRunSword", true);
+        }
+        else
+        {
+            skin.GetComponent<Animator>().SetBool("PlayerRunSword", false);
+        }
+
 
     }
     private void LoadNextScene()
