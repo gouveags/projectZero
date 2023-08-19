@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4146016520680128205}
   - component: {fileID: 4146016520680128204}
   - component: {fileID: 4146016520680128207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bat (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 4146016520759588695}
   - component: {fileID: 4146016520759588693}
   - component: {fileID: 4146016520759588692}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 4146016520803319645}
   - component: {fileID: 4146016520803319643}
   - component: {fileID: 4146016520803319642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 4146016521060821655}
   - component: {fileID: 4146016521060821654}
   - component: {fileID: 4146016521060821641}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 4146016521094695366}
   - component: {fileID: 4146016521094695353}
   - component: {fileID: 4146016521094695367}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -531,7 +531,7 @@ GameObject:
   - component: {fileID: 4146016521473692441}
   - component: {fileID: 4146016521473692440}
   - component: {fileID: 4146016521473692443}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BatTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,9 +604,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4146016521551785971}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BatFly
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 4146016521734739416}
   - component: {fileID: 4146016521734739419}
   - component: {fileID: 4146016521734739418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bat (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}

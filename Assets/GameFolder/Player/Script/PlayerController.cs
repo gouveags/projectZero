@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
         //Sytem Jump
 
-        bool canJump = Physics2D.OverlapCircle(floor.position, 1f, FloorLayer);
+        bool canJump = Physics2D.OverlapCircle(floor.position, 0.1f, FloorLayer);
         if (canJump && Input.GetButtonDown("Jump"))
         {
      

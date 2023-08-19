@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 280455280}
   - component: {fileID: 280455282}
   - component: {fileID: 280455281}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1006318949
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -8115,7 +8115,7 @@ GameObject:
   - component: {fileID: 909172943}
   - component: {fileID: 909172945}
   - component: {fileID: 909172944}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9077,7 +9077,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1948317204}
   - component: {fileID: 1948317203}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9274,6 +9274,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.59
       objectReference: {fileID: 0}
+    - target: {fileID: 5631075906799078666, guid: 7b35159326fa4c446b255889c1b3de65, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631075906843221754, guid: 7b35159326fa4c446b255889c1b3de65, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631075906843221754, guid: 7b35159326fa4c446b255889c1b3de65, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1412444599
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631075906843221757, guid: 7b35159326fa4c446b255889c1b3de65, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b35159326fa4c446b255889c1b3de65, type: 3}
 --- !u!1001 &1266229061347369994
@@ -9443,6 +9459,10 @@ PrefabInstance:
     - target: {fileID: 1305032253294399014, guid: 103389ada3e01a349badcc6e0ae4769a, type: 3}
       propertyPath: gravidadeScale
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305032253294399015, guid: 103389ada3e01a349badcc6e0ae4769a, type: 3}
+      propertyPath: life
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1305032254363775824, guid: 103389ada3e01a349badcc6e0ae4769a, type: 3}
       propertyPath: m_Enabled
