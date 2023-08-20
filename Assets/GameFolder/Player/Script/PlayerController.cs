@@ -84,7 +84,10 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.AddForce(new Vector2(0, jumpForce ));
             rb.gravityScale = gravidadeScale;
+
         }
+       
+
         vel = new Vector2(Input.GetAxisRaw("Horizontal")*5,rb.velocity.y);
 
 

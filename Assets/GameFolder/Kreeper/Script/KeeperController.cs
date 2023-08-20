@@ -9,8 +9,8 @@ public class KeeperController : MonoBehaviour
     public float velKeeper;
     public Transform Skin;
     public Transform KeeperRange;
-
     public bool goRight;
+    
     
 
     
@@ -43,6 +43,7 @@ public class KeeperController : MonoBehaviour
             if (Vector2.Distance(transform.position, b.position) < 0.1f)
             {
                 goRight = false;
+                
             }
 
             transform.position = Vector2.MoveTowards(transform.position, b.position, velKeeper * Time.deltaTime);
@@ -53,9 +54,13 @@ public class KeeperController : MonoBehaviour
             if (Vector2.Distance(transform.position, a.position) < 0.1f)
             {
                 goRight = true;
+       
             }
 
             transform.position = Vector2.MoveTowards(transform.position, a.position, velKeeper * Time.deltaTime);
         }
+
+        
+
     }
 }
