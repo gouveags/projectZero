@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5bfb77e605901d941a53df394ef554ed
+guid: fd9babaf3486372409b08dcda27fa794
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,295 +105,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FireTrap_0
+      name: Walk_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 35
         y: 0
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 40
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 983333cf4dfbcf745b3c13bd092a29f3
-      internalID: -485709400
+      spriteID: 1a4849eaaf298884abb3b702119c3f45
+      internalID: 555507340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireTrap_1
+      name: Walk_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 101
         y: 0
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 43
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8b9d597d9a895d4d839f92b2e7241b3
-      internalID: 43975799
+      spriteID: 9ffe7162c3dd68b4c89a081bb1b61256
+      internalID: -1291552978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireTrap_2
+      name: Walk_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 170
         y: 0
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 48
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a623dd07c9c485345baac7c61b179a43
-      internalID: -96902138
+      spriteID: efa507bf90d42b9448307102dfa173c1
+      internalID: 1631218054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireTrap_3
+      name: Walk_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 244
         y: 0
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 47
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d863b4c12a374934899d5084bf48a933
-      internalID: -703697968
+      spriteID: d86d771dad8b4cb4ea5acb2ec6f6e23e
+      internalID: -36027831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireTrap_4
+      name: Walk_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 317
         y: 0
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 46
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a84818365f3a6b4a9527237b411bf7a
-      internalID: 1015156348
+      spriteID: 51b83b75281a7384791a28673e14a15c
+      internalID: 1685087363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireTrap_5
+      name: Walk_5
       rect:
         serializedVersion: 2
-        x: 160
+        x: 369
         y: 0
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 43
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 519be7b4b1544b843ae9753fbb383b8c
-      internalID: -1004379626
+      spriteID: 13d7cdf7ae843f0438b620e1e5b1d8eb
+      internalID: 892975446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireTrap_6
+      name: Walk_6
       rect:
         serializedVersion: 2
-        x: 192
+        x: 438
         y: 0
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 43
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f1bc08a3afb21c40990452f367ed7d0
-      internalID: 816716224
+      spriteID: fc26fa90dfbfe954a974f6f59e2d8983
+      internalID: 86020659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireTrap_7
+      name: Walk_7
       rect:
         serializedVersion: 2
-        x: 224
+        x: 507
         y: 0
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 44
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82432073be52f1746a99886daa5e6756
-      internalID: 1167595015
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FireTrap_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0776830cd6c24844fbdcf5512cacd383
-      internalID: 1776430732
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FireTrap_9
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59e514ad8e3081f41931680990c4f0f8
-      internalID: -113366483
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FireTrap_10
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00beb6a174f6a084296ae386469b2e21
-      internalID: 1964983569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FireTrap_11
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b4f684a10f2f0064a87c148648009e6f
-      internalID: 1222628449
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FireTrap_12
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b856b43324c52c8429ce7a72ce9df227
-      internalID: -960573869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FireTrap_13
-      rect:
-        serializedVersion: 2
-        x: 416
-        y: 0
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d0570c0b172bb54dbb3188b91d698e4
-      internalID: 618600938
+      spriteID: 19f03539cb3c9c444ac312d13dd79872
+      internalID: 1207456752
       vertices: []
       indices: 
       edges: []
@@ -409,20 +283,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      FireTrap_0: -485709400
-      FireTrap_1: 43975799
-      FireTrap_10: 1964983569
-      FireTrap_11: 1222628449
-      FireTrap_12: -960573869
-      FireTrap_13: 618600938
-      FireTrap_2: -96902138
-      FireTrap_3: -703697968
-      FireTrap_4: 1015156348
-      FireTrap_5: -1004379626
-      FireTrap_6: 816716224
-      FireTrap_7: 1167595015
-      FireTrap_8: 1776430732
-      FireTrap_9: -113366483
+      Walk_0: 555507340
+      Walk_1: -1291552978
+      Walk_2: 1631218054
+      Walk_3: -36027831
+      Walk_4: 1685087363
+      Walk_5: 892975446
+      Walk_6: 86020659
+      Walk_7: 1207456752
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
