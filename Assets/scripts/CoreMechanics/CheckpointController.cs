@@ -13,7 +13,7 @@ namespace CoreMechanics
         // Start is called before the first frame update
         void Start()
         {
-            if (gameObject.tag == "StartCheckpoint" && currentCheckpoint == Vector2.zero)
+            if (gameObject.tag == "StartCheckpoint")
             {
                 currentCheckpoint = transform.position;
             }

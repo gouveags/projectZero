@@ -20,8 +20,9 @@ public class SkeletonAttackCollider : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Character>().life--;
-            
+            collision.GetComponent<Character>().PlayerDamege(Random.Range(2, 5));
+
+
         }
     }
 }

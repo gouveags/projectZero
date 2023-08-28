@@ -19,7 +19,7 @@ public class KnightAttackCollider : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Character>().life--;
+            collision.GetComponent<Character>().PlayerDamege(Random.Range(1, 3));
 
         }
     }
