@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.gravityScale = gravidadeScale;
             this.enabled = false;
+            rb.simulated = false;
             Invoke("LoadNextScene", deathDelay);
             
         }

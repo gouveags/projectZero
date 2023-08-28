@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 1
   Skin: {fileID: 4146016520759588695}
+  Cam: {fileID: 0}
 --- !u!1 &4146016520759588694
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 1
   Skin: {fileID: 4146016521060821655}
+  Cam: {fileID: 0}
 --- !u!1 &4146016521473692442
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,3 +733,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 1
   Skin: {fileID: 4146016520803319645}
+  Cam: {fileID: 0}
