@@ -20,25 +20,28 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        heartCountText.text = "x" + life.ToString();
+       
 
-        if (life <= 5 && life > 0)
+        if (life <= 5 && life > 1)
         {
-            Heart.GetComponent<Animator>().Play("HeartWarning");
+            Heart.GetComponent<Animator>().Play("HeartWarning", -1);
         }
+        else
 
         if (life <= 0)
         {
-            Skin.GetComponent<Animator>().Play("Die");
-            heartCountText.text = "x0";
-            Heart.GetComponent<Animator>().Play("HeartDead");
+         
+            
+            Skin.GetComponent<Animator>().Play("Die", -1);
+            Heart.GetComponent<Animator>().Play("HeartDead", -1);
+            life = 0;
 
         }
 
-        
-        
-       
+        heartCountText.text = "x" + life.ToString();
+
     }
+    
     public void PlayerDamege(int value)
     {
         life = life - value;

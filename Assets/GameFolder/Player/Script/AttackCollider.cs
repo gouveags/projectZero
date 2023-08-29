@@ -28,13 +28,12 @@ public class AttackCollider : MonoBehaviour
             
                 collision.GetComponent<Character>().life--;
                 collision.GetComponent<Character>().Skin.GetComponent<Animator>().Play("Hit",-1);
-
+                
             }
             else {
 
                 collision.GetComponent<Character>().life -= 2;
                 collision.GetComponent<Character>().Skin.GetComponent<Animator>().Play("Hit");
-
 
             }
         }
