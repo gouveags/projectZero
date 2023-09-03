@@ -22,7 +22,7 @@ public class Character : MonoBehaviour
     {
        
 
-        if (life <= 5 && life > 1)
+        if (life <= 5 && life >= 1)
         {
             Heart.GetComponent<Animator>().Play("HeartWarning", -1);
         }
@@ -31,7 +31,6 @@ public class Character : MonoBehaviour
         if (life <= 0)
         {
          
-            
             Skin.GetComponent<Animator>().Play("Die", -1);
             Heart.GetComponent<Animator>().Play("HeartDead", -1);
             life = 0;
