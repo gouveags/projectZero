@@ -102,6 +102,8 @@ MonoBehaviour:
   life: 1
   Skin: {fileID: 4146016520759588695}
   Cam: {fileID: 0}
+  heartCountText: {fileID: 0}
+  Heart: {fileID: 0}
 --- !u!1 &4146016520759588694
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,9 +175,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1006318949
+  m_SortingLayer: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1659120582, guid: 84f35a0aa3c1ddd4bb1c43788cf2c50c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -279,9 +281,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1006318949
+  m_SortingLayer: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1659120582, guid: 84f35a0aa3c1ddd4bb1c43788cf2c50c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -385,9 +387,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1006318949
+  m_SortingLayer: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1659120582, guid: 84f35a0aa3c1ddd4bb1c43788cf2c50c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -522,6 +524,8 @@ MonoBehaviour:
   life: 1
   Skin: {fileID: 4146016521060821655}
   Cam: {fileID: 0}
+  heartCountText: {fileID: 0}
+  Heart: {fileID: 0}
 --- !u!1 &4146016521473692442
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,7 +537,7 @@ GameObject:
   - component: {fileID: 4146016521473692441}
   - component: {fileID: 4146016521473692440}
   - component: {fileID: 4146016521473692443}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: BatTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -734,3 +738,5 @@ MonoBehaviour:
   life: 1
   Skin: {fileID: 4146016520803319645}
   Cam: {fileID: 0}
+  heartCountText: {fileID: 0}
+  Heart: {fileID: 0}

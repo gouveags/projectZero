@@ -12935,6 +12935,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 506688594}
+    - target: {fileID: 4146016521473692442, guid: 61aed85c1b5b7cd448473becf092b0f8, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4146016521551785970, guid: 61aed85c1b5b7cd448473becf092b0f8, type: 3}
       propertyPath: m_Name
       value: BatFly (1)
@@ -25047,6 +25051,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1305032254363775826, guid: 103389ada3e01a349badcc6e0ae4769a, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 103389ada3e01a349badcc6e0ae4769a, type: 3}
 --- !u!1001 &3501704175056237263
@@ -25153,6 +25161,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 506688594}
+    - target: {fileID: 4146016521473692442, guid: 61aed85c1b5b7cd448473becf092b0f8, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4146016521551785970, guid: 61aed85c1b5b7cd448473becf092b0f8, type: 3}
       propertyPath: m_Name
       value: BatFly
