@@ -6,6 +6,7 @@ public class AttackCollider : MonoBehaviour
 {
 
     public Transform player;
+    public Transform cam;
 
     // Start is called before the first frame update
     void Start()
@@ -28,12 +29,14 @@ public class AttackCollider : MonoBehaviour
             
                 collision.GetComponent<Character>().life--;
                 collision.GetComponent<Character>().Skin.GetComponent<Animator>().Play("Hit",-1);
-                
+                cam.GetComponent<Animator>().Play("CamPlayerDamge", -1);
+
             }
             else {
 
                 collision.GetComponent<Character>().life -= 2;
                 collision.GetComponent<Character>().Skin.GetComponent<Animator>().Play("Hit");
+                cam.GetComponent<Animator>().Play("CamPlayerDamge", -1);
 
             }
         }

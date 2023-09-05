@@ -80,14 +80,12 @@ public class PlayerController : MonoBehaviour
         bool canJump = Physics2D.OverlapCircle(floor.position, 0.1f, FloorLayer);
         if (canJump && Input.GetButtonDown("Jump"))
         {
-     
             skin.GetComponent<Animator>().Play("PlayerJump", -1);
             rb.velocity = Vector2.zero;
             rb.AddForce(new Vector2(0, jumpForce ));
             rb.gravityScale = gravidadeScale;
-
         }
-       
+        
 
         vel = new Vector2(Input.GetAxisRaw("Horizontal")*5,rb.velocity.y);
 
