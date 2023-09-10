@@ -25047,6 +25047,30 @@ PrefabInstance:
       propertyPath: heartCountText
       value: 
       objectReference: {fileID: 922705758}
+    - target: {fileID: 1305032253873549084, guid: 103389ada3e01a349badcc6e0ae4769a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6481483
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305032253873549084, guid: 103389ada3e01a349badcc6e0ae4769a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.2552185
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305032253873549084, guid: 103389ada3e01a349badcc6e0ae4769a, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.004335088
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305032253873549084, guid: 103389ada3e01a349badcc6e0ae4769a, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.089775
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305032253873549084, guid: 103389ada3e01a349badcc6e0ae4769a, type: 3}
+      propertyPath: m_Direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305032253873549087, guid: 103389ada3e01a349badcc6e0ae4769a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0127
+      objectReference: {fileID: 0}
     - target: {fileID: 1305032254363775824, guid: 103389ada3e01a349badcc6e0ae4769a, type: 3}
       propertyPath: m_Enabled
       value: 0

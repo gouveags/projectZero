@@ -11,7 +11,7 @@ public class FloorCollider : MonoBehaviour
     {
         if (collision.CompareTag("Floor"))
         {
-            audioSouce.PlayOneShot(groundedSound, 0.3f);
+            audioSouce.PlayOneShot(groundedSound, 0.01f);
 
         }
     }
