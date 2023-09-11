@@ -32,7 +32,7 @@ public class AttackCollider : MonoBehaviour
                 collision.GetComponent<Character>().life--;
                 collision.GetComponent<Character>().Skin.GetComponent<Animator>().Play("Hit",-1);
                 cam.GetComponent<Animator>().Play("CamPlayerDamge", -1);
-                audioSouce.PlayOneShot(groundedSound, 0.05f);
+                audioSouce.PlayOneShot(groundedSound, 0.5f);
 
             }
             else {
@@ -40,7 +40,7 @@ public class AttackCollider : MonoBehaviour
                 collision.GetComponent<Character>().life -= 2;
                 collision.GetComponent<Character>().Skin.GetComponent<Animator>().Play("Hit");
                 cam.GetComponent<Animator>().Play("CamPlayerDamge", -1);
-                audioSouce.PlayOneShot(groundedSound, 0.05f);
+                audioSouce.PlayOneShot(groundedSound, 0.5f);
 
             }
         }

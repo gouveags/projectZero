@@ -7,7 +7,6 @@ using CoreMechanics;
 
 public class PlayerController : MonoBehaviour
 {
-
     Rigidbody2D rb;
     Vector2 vel;
     public Transform floor;
@@ -17,41 +16,46 @@ public class PlayerController : MonoBehaviour
     public float comboTime;
     public float dashTime;
     public float deathDelay = 2.0f;
-    public int jumpForce;
+    public float jumpForce;
     public int gravidadeScale;
     public AudioSource audioSouce;
     public AudioClip groundedSound;
+
+    public bool isGrounded;
+    public bool isJumping; // Variável de controle de salto
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = skin.GetComponent<Animator>();
         transform.position = CheckpointController.currentCheckpoint;
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //when player die 
+        animator.SetBool("isGrounded", isGrounded);
+       
 
+        // Quando o jogador morre
         if (GetComponent<Character>().life <= 0)
         {
             rb.gravityScale = gravidadeScale;
             this.enabled = false;
             rb.simulated = false;
             Invoke("LoadNextScene", deathDelay);
-            
         }
-       
-        //Control Dash
 
-        dashTime = dashTime + Time.deltaTime;
+        // Controlando o Dash
+        dashTime += Time.deltaTime;
         if (Input.GetButtonDown("Fire2") && dashTime > 1)
         {
             dashTime = 0;
             skin.GetComponent<Animator>().Play("PlayerDash", -1);
             rb.velocity = Vector2.zero;
-            rb.AddForce(new Vector2(skin.localScale.x * 400,0));
+            rb.AddForce(new Vector2(skin.localScale.x * 400, 0));
             rb.gravityScale = 0;
         }
         if (dashTime > 0.3)
@@ -59,13 +63,14 @@ public class PlayerController : MonoBehaviour
             rb.gravityScale = gravidadeScale;
         }
 
-        //Control combotime
-
-        comboTime = comboTime + Time.deltaTime;
-        if (Input.GetButtonDown("Fire1") && comboTime > 0.5f)
+        // Controlando o comboTime
+        comboTime += Time.deltaTime;
+        if ((Input.GetButtonDown("Fire1") && comboTime > 0.5f) || (isJumping && Input.GetButtonDown("Fire1"))) // Verificando "Fire1" no ar
         {
             comboNum++;
-            if (comboNum>2) {
+
+            if (comboNum > 2)
+            {
                 comboNum = 1;
             }
             comboTime = 0;
@@ -74,45 +79,54 @@ public class PlayerController : MonoBehaviour
         }
         if (comboTime >= 2)
         {
-            comboNum = 0;  
+            comboNum = 0;
         }
 
-        //Sytem Jump
+        // Sistema de pulo
+        isGrounded = Physics2D.OverlapCircle(floor.position, 0.05f, FloorLayer);
 
-        bool canJump = Physics2D.OverlapCircle(floor.position, 0.05f, FloorLayer);
-        if (canJump && Input.GetButtonDown("Jump"))
+        // Verifica se o jogador está no chão e permite o pulo
+        if (isGrounded)
         {
-            skin.GetComponent<Animator>().Play("PlayerJump", -1);
-            rb.velocity = Vector2.zero;
-            rb.AddForce(new Vector2(0, jumpForce ));
-            rb.gravityScale = gravidadeScale;
+            isJumping = false;
         }
-        
 
-        vel = new Vector2(Input.GetAxisRaw("Horizontal")*5,rb.velocity.y);
+        if (!isJumping && Input.GetButtonDown("Jump"))
+        {
+            Jump();
+        }
 
+        vel = new Vector2(Input.GetAxisRaw("Horizontal") * 5, rb.velocity.y);
 
-        //Run and RunSword
-
-        if (Input.GetAxisRaw("Horizontal") != 0 && comboNum == 0) {
+        // Correndo e Atacando Correndo
+        if (Input.GetAxisRaw("Horizontal") != 0 && comboNum == 0)
+        {
             skin.localScale = new Vector3(Input.GetAxisRaw("Horizontal"), 1, 1);
-            skin.GetComponent<Animator>().SetBool("PlayerRun", true);
+            animator.SetBool("PlayerRun", true);
         }
-        else { 
-            skin.GetComponent<Animator>().SetBool("PlayerRun", false); 
+        else
+        {
+            animator.SetBool("PlayerRun", false);
         }
 
         if (Input.GetAxisRaw("Horizontal") != 0 && comboNum >= 1)
         {
             skin.localScale = new Vector3(Input.GetAxisRaw("Horizontal"), 1, 1);
-            skin.GetComponent<Animator>().SetBool("PlayerRunSword", true);
+            animator.SetBool("PlayerRunSword", true);
         }
         else
         {
-            skin.GetComponent<Animator>().SetBool("PlayerRunSword", false);
+            animator.SetBool("PlayerRunSword", false);
         }
 
+        // Continuar a animação de salto enquanto estiver no ar
+        if (!isGrounded && rb.velocity.y > 0)
+        {
+            animator.Play("PlayerJump", -1);
+            isJumping = true;
+        }
     }
+
     private void LoadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -120,10 +134,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(dashTime > 0.3) {
+        if (dashTime > 0.3)
+        {
             rb.velocity = vel;
         }
-        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -138,4 +152,12 @@ public class PlayerController : MonoBehaviour
             this.transform.parent = null;
     }
 
+    private void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        rb.gravityScale = gravidadeScale;
+        animator.Play("PlayerJump", -1);
+        isGrounded = false;
+        isJumping = true; // Define como verdadeira quando o jogador pula
+    }
 }

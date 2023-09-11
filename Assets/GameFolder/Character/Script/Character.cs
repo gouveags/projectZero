@@ -10,6 +10,8 @@ public class Character : MonoBehaviour
     public Transform Cam;
     public Text heartCountText;
     public Transform Heart;
+    public AudioSource audioSouce;
+    public AudioClip groundedSound;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +47,7 @@ public class Character : MonoBehaviour
     {
         life = life - value;
         Skin.GetComponent<Animator>().Play("PlayerDamage", 1);
+        audioSouce.PlayOneShot(groundedSound, 0.5f);
         Cam.GetComponent<Animator>().Play("CamPlayerDamge", - 1);
     }
 
