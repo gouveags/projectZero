@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a060aad24cbf23146b40db68dd7b88e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 4904552486503111559, guid: 103389ada3e01a349badcc6e0ae4769a, type: 3}
   attackTime: 0
 --- !u!58 &4146016520680128205
 CircleCollider2D:
@@ -104,6 +104,8 @@ MonoBehaviour:
   Cam: {fileID: 0}
   heartCountText: {fileID: 0}
   Heart: {fileID: 0}
+  audioSouce: {fileID: 0}
+  groundedSound: {fileID: 0}
 --- !u!1 &4146016520759588694
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a060aad24cbf23146b40db68dd7b88e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 4904552486503111559, guid: 103389ada3e01a349badcc6e0ae4769a, type: 3}
   attackTime: 0
 --- !u!58 &4146016521094695366
 CircleCollider2D:
@@ -526,6 +528,8 @@ MonoBehaviour:
   Cam: {fileID: 0}
   heartCountText: {fileID: 0}
   Heart: {fileID: 0}
+  audioSouce: {fileID: 0}
+  groundedSound: {fileID: 0}
 --- !u!1 &4146016521473692442
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a060aad24cbf23146b40db68dd7b88e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 4904552486503111559, guid: 103389ada3e01a349badcc6e0ae4769a, type: 3}
   attackTime: 0
 --- !u!58 &4146016521734739416
 CircleCollider2D:
@@ -740,3 +744,5 @@ MonoBehaviour:
   Cam: {fileID: 0}
   heartCountText: {fileID: 0}
   Heart: {fileID: 0}
+  audioSouce: {fileID: 0}
+  groundedSound: {fileID: 0}
