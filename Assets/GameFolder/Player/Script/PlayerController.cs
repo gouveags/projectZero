@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
     public float deathDelay = 2.0f;
     public int jumpForce;
     public int gravidadeScale;
-
+    public AudioSource audioSouce;
+    public AudioClip groundedSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,7 +69,8 @@ public class PlayerController : MonoBehaviour
                 comboNum = 1;
             }
             comboTime = 0;
-            skin.GetComponent<Animator>().Play("PlayerAttack" + comboNum, -1);  
+            skin.GetComponent<Animator>().Play("PlayerAttack" + comboNum, -1);
+            audioSouce.PlayOneShot(groundedSound, 0.05f);
         }
         if (comboTime >= 2)
         {
@@ -77,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
         //Sytem Jump
 
-        bool canJump = Physics2D.OverlapCircle(floor.position, 0.1f, FloorLayer);
+        bool canJump = Physics2D.OverlapCircle(floor.position, 0.05f, FloorLayer);
         if (canJump && Input.GetButtonDown("Jump"))
         {
             skin.GetComponent<Animator>().Play("PlayerJump", -1);
