@@ -185,8 +185,8 @@ Transform:
   m_GameObject: {fileID: 1266229060662170388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.262, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3.772394, y: 3.772394, z: 3.772394}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1266229061848544441}
   - {fileID: 1266229059992818288}
@@ -428,5 +428,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d06ad785b0f5c0498d43052b9362d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 5
+  life: 1
   Skin: {fileID: 1266229059977902024}
+  Cam: {fileID: 0}
+  heartCountText: {fileID: 0}
+  Heart: {fileID: 0}
+  audioSouce: {fileID: 0}
+  groundedSound: {fileID: 0}
