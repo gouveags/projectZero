@@ -32,17 +32,16 @@ public class Character : MonoBehaviour
 
         if (life <= 0)
         {
-         
+            Destroy(gameObject, 2f);
             Skin.GetComponent<Animator>().Play("Die", -1);
             Heart.GetComponent<Animator>().Play("HeartDead", -1);
             life = 0;
-
         }
 
         heartCountText.text = "x" + life.ToString();
 
     }
-    
+  
     public void PlayerDamege(int value)
     {
         life = life - value;

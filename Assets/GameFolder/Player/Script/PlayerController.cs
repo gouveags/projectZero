@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
             }
 
             comboTime += Time.deltaTime;
-            if ((Input.GetButtonDown("Fire1") && comboTime > 0.5f) || (isJumping && Input.GetButtonDown("Fire1")))
+            if ((Input.GetButtonDown("Fire1") && comboTime > 0.5f) || (isJumping && Input.GetButtonDown("Fire1") && comboTime > 0.5f))
             {
                 comboNum++;
                 if (comboNum > 2)
