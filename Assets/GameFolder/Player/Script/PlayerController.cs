@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
         public int comboNum;
         public float comboTime;
         public float dashTime;
-        public float deathDelay = 2.0f;
+        public float deathDelay = 3f;
         public float jumpForce;
         public int gravidadeScale;
         public AudioSource audioSource;

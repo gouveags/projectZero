@@ -32,7 +32,7 @@ public class Character : MonoBehaviour
 
         if (life <= 0)
         {
-            Destroy(gameObject, 2f);
+            Destroy(gameObject, 4f);
             Skin.GetComponent<Animator>().Play("Die", -1);
             Heart.GetComponent<Animator>().Play("HeartDead", -1);
             life = 0;

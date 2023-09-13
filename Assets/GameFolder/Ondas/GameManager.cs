@@ -1,15 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI; // Importe a biblioteca UnityEngine.UI para acessar os componentes de UI
 using System.Collections;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
-    public List<GameObject> enemyPrefabs; // Lista de inimigos que podem aparecer
-    public Transform spawnPoint; // Ponto de spawn dos inimigos
-    public float timeBetweenWaves = 10f; // Tempo entre as ondas
-    private float countdown = 2f; // Contagem regressiva até a primeira onda
-    private int waveNumber = 0; // Número da onda atualddd
-   
+    public List<GameObject> enemyPrefabs;
+    public Transform spawnPoint;
+    public float timeBetweenWaves = 9f;
+    private float countdown = 0f;
+    private int waveNumber = 0;
+
+    // Adicione estas duas variáveis para referenciar o texto da onda e do contador
+    public Text waveText;
+    public Text countText;
+
     void Update()
     {
         if (countdown <= 0f)
@@ -19,17 +24,21 @@ public class GameManager : MonoBehaviour
         }
 
         countdown -= Time.deltaTime;
+
+        // Atualize o texto da contagem regressiva no Canvas
+        countText.text = Mathf.Round(countdown).ToString();
     }
 
     IEnumerator SpawnWave()
     {
         waveNumber++;
+        waveText.text = "Onda: " + waveNumber ; // Atualize o texto da onda no Canvas
         Debug.Log("Onda #" + waveNumber + " chegou!");
 
         for (int i = 0; i < waveNumber; i++)
         {
             SpawnEnemy();
-            yield return new WaitForSeconds(1f); // Intervalo entre a criação de cada inimigo
+            yield return new WaitForSeconds(1f);
         }
     }
 
