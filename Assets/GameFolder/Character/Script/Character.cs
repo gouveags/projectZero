@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class Character : MonoBehaviour
     public Transform Heart;
     public AudioSource audioSouce;
     public AudioClip groundedSound;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,8 @@ public class Character : MonoBehaviour
             Skin.GetComponent<Animator>().Play("Die", -1);
             Heart.GetComponent<Animator>().Play("HeartDead", -1);
             life = 0;
+            
+           
         }
 
         heartCountText.text = "x" + life.ToString();
