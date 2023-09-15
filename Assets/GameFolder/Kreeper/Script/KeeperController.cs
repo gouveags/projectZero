@@ -10,14 +10,16 @@ public class KeeperController : MonoBehaviour
     public Transform Skin;
     public Transform KeeperRange;
     public bool goRight;
-    
-    
+    GameObject Player;
 
-    
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Player = GameObject.FindWithTag("Player");
+
     }
 
     // Update is called once per frame
@@ -37,30 +39,22 @@ public class KeeperController : MonoBehaviour
         }
 
       
-        if (goRight == true)
+        // Calculate the direction vector from the enemy to the player
+        Vector3 directionToPlayer = Player.transform.position - transform.position;
+        directionToPlayer.y = 0; // Make sure the enemy only follows on the X-axis
+
+        // Face the player's direction
+        if (directionToPlayer.x > 0)
         {
             Skin.localScale = new Vector3(1, 1, 1);
-            if (Vector2.Distance(transform.position, b.position) < 0.1f)
-            {
-                goRight = false;
-                
-            }
-
-            transform.position = Vector2.MoveTowards(transform.position, b.position, velKeeper * Time.deltaTime);
         }
-        else
+        else if (directionToPlayer.x < 0)
         {
             Skin.localScale = new Vector3(-1, 1, 1);
-            if (Vector2.Distance(transform.position, a.position) < 0.1f)
-            {
-                goRight = true;
-       
-            }
-
-            transform.position = Vector2.MoveTowards(transform.position, a.position, velKeeper * Time.deltaTime);
         }
 
-        
-
+        // Move towards the player on the X-axis
+        float step = velKeeper * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, step);
     }
 }
