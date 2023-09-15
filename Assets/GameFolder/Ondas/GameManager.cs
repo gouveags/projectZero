@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public int enemiesRemaining; // Quantidade de inimigos restantes na cena.
     private bool isBossWave = false;
 
+    public Text CoinCountText;
     public Text waveText;
     public Text countText;
 
@@ -45,6 +46,8 @@ public class GameManager : MonoBehaviour
         {
             enemiesRemaining = 0;
         }
+
+      
     }
 
     IEnumerator SpawnWave()

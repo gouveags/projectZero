@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 using CoreMechanics;
 
 public class PlayerController : MonoBehaviour
@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
         public int comboNum;
         public float comboTime;
         public float dashTime;
-        public float deathDelay = 3f;
+        public float deathDelay;
         public float jumpForce;
         public int gravidadeScale;
         public AudioSource audioSource;
@@ -24,8 +24,11 @@ public class PlayerController : MonoBehaviour
         public bool isGrounded;
         public bool isJumping;
         private Animator animator;
+        public int coin = 0;
+        public Text CoinCountText;
 
-        void Start()
+
+    void Start()
         {
             rb = GetComponent<Rigidbody2D>();
             animator = skin.GetComponent<Animator>();
@@ -42,7 +45,8 @@ public class PlayerController : MonoBehaviour
                 rb.gravityScale = gravidadeScale;
                 this.enabled = false;
                 rb.simulated = false;
-                Invoke("LoadNextScene", deathDelay);
+            
+               Invoke("LoadNextScene", deathDelay);
             }
 
             dashTime += Time.deltaTime;
@@ -117,7 +121,9 @@ public class PlayerController : MonoBehaviour
                 animator.Play("PlayerJump", -1);
                 isJumping = true;
             }
-        }
+
+        CoinCountText.text = coin.ToString();
+    }
 
         private void LoadNextScene()
         {
