@@ -53,7 +53,9 @@ public class SkeletonController : MonoBehaviour
 
         // Move towards the player on the X-axis
         float step = velSkeleton * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, step);
+        Vector3 targetPosition = Player.transform.position;
+        targetPosition.y = transform.position.y; // Mantém a mesma altura do inimigo
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
     }
 
 }
