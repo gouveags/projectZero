@@ -8,6 +8,7 @@ using CoreMechanics;
 public class PlayerController : MonoBehaviour
     {
         private Rigidbody2D rb;
+        private int life;
         private Vector2 vel;
         public Transform floor;
         public LayerMask FloorLayer;
@@ -26,10 +27,14 @@ public class PlayerController : MonoBehaviour
         private Animator animator;
         public int coin = 0;
         public Text CoinCountText;
+        public Text heartCountText;
+        public Transform Heart;
+
 
 
     void Start()
         {
+            life = GetComponent<Character>().life;
             rb = GetComponent<Rigidbody2D>();
             animator = skin.GetComponent<Animator>();
             transform.position = CheckpointController.currentCheckpoint;
@@ -38,9 +43,26 @@ public class PlayerController : MonoBehaviour
 
         void Update()
         {
-            animator.SetBool("isGrounded", isGrounded);
 
-            if (GetComponent<Character>().life <= 0)
+        heartCountText.text = "x" + GetComponent<Character>().life.ToString();
+       
+        animator.SetBool("isGrounded", isGrounded);
+
+        if (life <= 5 && life >= 1)
+        {
+            Heart.GetComponent<Animator>().Play("HeartWarning", -1);
+            
+        }
+        else if (life <= 0 )
+        {
+
+            Destroy(gameObject, 2f);
+            animator.GetComponent<Animator>().Play("Die", -1);
+            Heart.GetComponent<Animator>().Play("HeartDead", -1);
+            life = 0;
+
+        }
+        if (GetComponent<Character>().life <= 0)
             {
                 rb.gravityScale = gravidadeScale;
                 this.enabled = false;

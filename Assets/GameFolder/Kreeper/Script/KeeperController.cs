@@ -11,7 +11,7 @@ public class KeeperController : MonoBehaviour
     public Transform KeeperRange;
     public bool goRight;
     GameObject Player;
-
+    public Transform lifeBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +26,7 @@ public class KeeperController : MonoBehaviour
             KeeperRange.GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<CapsuleCollider2D>().enabled = false;
             this.enabled = false;
+            GetComponent<KeeperController>().lifeBar.localScale = new Vector3(0, 1, 1);
         }
 
         if (Skin.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("KeeperAttack"))
@@ -52,5 +53,11 @@ public class KeeperController : MonoBehaviour
         Vector3 targetPosition = Player.transform.position;
         targetPosition.y = transform.position.y; // Mantém a mesma altura do inimigo
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
+
+        
+    }
+    private void FixedUpdate()
+    {
+        lifeBar.localScale = new Vector3(GetComponent<Character>().life / 10f, 1, 1);
     }
 }

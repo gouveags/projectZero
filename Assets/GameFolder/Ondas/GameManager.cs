@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
 
         waveNumber++;
         waveText.text = "Onda: " + waveNumber;
-        Debug.Log("Onda #" + waveNumber + " chegou!");
+        
     }
 
     void UpdateCountdown()
