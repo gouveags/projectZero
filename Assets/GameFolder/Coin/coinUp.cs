@@ -21,7 +21,6 @@ public class coinUp : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerController>().coin++;
-            Debug.Log("ëstou aqui");
             Destroy(gameObject);
             
 

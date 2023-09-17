@@ -87,7 +87,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skin
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3269523248430632632, guid: 68078536f35cfd84ab6ded236812bfed, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3269523248430632632, guid: 68078536f35cfd84ab6ded236812bfed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 68078536f35cfd84ab6ded236812bfed, type: 3}
 --- !u!4 &5375528486469345706 stripped
 Transform:

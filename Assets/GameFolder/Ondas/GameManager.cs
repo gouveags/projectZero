@@ -7,14 +7,16 @@ public class GameManager : MonoBehaviour
 {
     public List<GameObject> enemyPrefabs;
     public List<GameObject> bossPrefabs;
+    public List<GameObject> spawnPoint3Enemies; // Novo array de inimigos para spawnPoint3.
     public Transform spawnPoint;
     public Transform spawnPoint2;
+    public Transform spawnPoint3;
     public Transform bossSpawnPoint;
     public float timeBetweenWaves = 3f;
     private float countdown;
     private int waveNumber = 0;
     private int enemiesToSpawn;
-    public int enemiesRemaining; // Quantidade de inimigos restantes na cena.
+    public int enemiesRemaining;
     private bool isBossWave = false;
 
     public Text CoinCountText;
@@ -46,31 +48,33 @@ public class GameManager : MonoBehaviour
         {
             enemiesRemaining = 0;
         }
-
-      
     }
 
     IEnumerator SpawnWave()
     {
         for (int i = 0; i < enemiesToSpawn; i++)
         {
-            SpawnEnemy();
-            SpawnEnemy2();
-            yield return new WaitForSeconds(1f);
+            Transform spawnTransform = Random.Range(0f, 1f) > 0.5f ? spawnPoint : spawnPoint2; // Escolhe aleatoriamente entre spawnPoint e spawnPoint2.
+
+            SpawnEnemy(spawnTransform);
+            SpawnEnemy3();
+
+            float randomSpawnDelay = Random.Range(0.1f, 1.0f); // Tempo aleatório entre spawns.
+            yield return new WaitForSeconds(randomSpawnDelay);
         }
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(Transform spawnTransform)
     {
         int randomIndex = Random.Range(0, enemyPrefabs.Count);
-        Instantiate(enemyPrefabs[randomIndex], spawnPoint.position, spawnPoint.rotation);
+        Instantiate(enemyPrefabs[randomIndex], spawnTransform.position, spawnTransform.rotation);
         enemiesRemaining++;
     }
 
-    void SpawnEnemy2()
+    void SpawnEnemy3()
     {
-        int randomIndex = Random.Range(0, enemyPrefabs.Count);
-        Instantiate(enemyPrefabs[randomIndex], spawnPoint2.position, spawnPoint2.rotation);
+        int randomIndex = Random.Range(0, spawnPoint3Enemies.Count);
+        Instantiate(spawnPoint3Enemies[randomIndex], spawnPoint3.position, spawnPoint3.rotation);
         enemiesRemaining++;
     }
 
@@ -86,7 +90,7 @@ public class GameManager : MonoBehaviour
         countdown = timeBetweenWaves;
         UpdateCountdown();
 
-        if (waveNumber > 0 && waveNumber % 10 == 0) // A bossfight ocorre a cada 10 ondas após a primeira.
+        if (waveNumber > 0 && waveNumber % 10 == 0)
         {
             isBossWave = true;
             SpawnBoss();
@@ -100,7 +104,6 @@ public class GameManager : MonoBehaviour
 
         waveNumber++;
         waveText.text = "Onda: " + waveNumber;
-        
     }
 
     void UpdateCountdown()
