@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class KeeperController : MonoBehaviour
 {
-    public Transform a;
-    public Transform b;
     public float velKeeper;
     public Transform Skin;
     public Transform KeeperRange;

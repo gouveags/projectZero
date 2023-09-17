@@ -14,7 +14,7 @@ public class coinUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        Destroy(gameObject, 5f);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
