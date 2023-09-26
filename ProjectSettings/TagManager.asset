@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - StartCheckpoint
   - Imune
+  - Store
   layers:
   - Default
   - TransparentFX

@@ -7,10 +7,12 @@ public class GameManager : MonoBehaviour
 {
     public List<GameObject> enemyPrefabs;
     public List<GameObject> bossPrefabs;
-    public List<GameObject> spawnPoint3Enemies; // Novo array de inimigos para spawnPoint3.
+    public GameObject storePrefab;
+    public List<GameObject> spawnPoint3Enemies;
     public Transform spawnPoint;
     public Transform spawnPoint2;
     public Transform spawnPoint3;
+    public Transform spawnStore;
     public Transform bossSpawnPoint;
     public float timeBetweenWaves = 3f;
     private float countdown;
@@ -18,6 +20,7 @@ public class GameManager : MonoBehaviour
     private int enemiesToSpawn;
     public int enemiesRemaining;
     private bool isBossWave = false;
+    private bool isStoreWave = false;
 
     public Text CoinCountText;
     public Text waveText;
@@ -44,9 +47,14 @@ public class GameManager : MonoBehaviour
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        if (enemies.Length <= 0)
+        if (enemies.Length <= 0 && !isStoreWave)
         {
             enemiesRemaining = 0;
+        }
+
+        if (isBossWave == true && enemies.Length == 0)
+        {
+            isBossWave = false;
         }
     }
 
@@ -54,14 +62,43 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < enemiesToSpawn; i++)
         {
-            Transform spawnTransform = Random.Range(0f, 1f) > 0.5f ? spawnPoint : spawnPoint2; // Escolhe aleatoriamente entre spawnPoint e spawnPoint2.
-
+            Transform spawnTransform = Random.Range(0f, 1f) > 0.5f ? spawnPoint : spawnPoint2;
             SpawnEnemy(spawnTransform);
             SpawnEnemy3();
-
-            float randomSpawnDelay = Random.Range(0.1f, 1.0f); // Tempo aleatório entre spawns.
+            float randomSpawnDelay = Random.Range(0.1f, 1.0f);
             yield return new WaitForSeconds(randomSpawnDelay);
         }
+    }
+
+    IEnumerator SpawnStoreWave()
+    {
+        if (isStoreWave)
+        {
+            yield break; // Sai da função se a wave da loja já estiver ativa.
+        }
+
+        isStoreWave = true; // Marca que a wave da loja está ativa.
+
+        // Spawn da loja.
+        GameObject store = Instantiate(storePrefab, spawnStore.position, spawnStore.rotation);
+
+        // Aguarda alguns segundos antes de destruir a loja.
+        yield return new WaitForSeconds(5f);
+
+        // Destrói o game object da loja.
+        Destroy(store);
+
+        // Espera até que o objeto da loja tenha sido destruído.
+        while (store != null)
+        {
+            yield return null;
+        }
+
+        isStoreWave = false; // Marca que a wave da loja não está mais ativa.
+
+        // Reinicia as waves normais.
+        enemiesToSpawn++;
+        StartCoroutine(SpawnWave());
     }
 
     void SpawnEnemy(Transform spawnTransform)
@@ -87,35 +124,33 @@ public class GameManager : MonoBehaviour
 
     void StartNewWave()
     {
+        if (!isStoreWave) // Verifica se não é a wave da loja.
+        {
+            waveNumber++; // Incrementa o contador de ondas apenas se não for a wave da loja.
+            waveText.text = "Onda: " + waveNumber;
+        }
+
         countdown = timeBetweenWaves;
         UpdateCountdown();
 
-        if (waveNumber > 0 && waveNumber % 10 == 0)
+        if (isStoreWave == false && waveNumber > 0 && waveNumber % 10 == 0)
         {
             isBossWave = true;
             SpawnBoss();
         }
-        else
+        else if (isBossWave == false && waveNumber > 0 && waveNumber % 5 == 0)
         {
-            isBossWave = false;
+            StartCoroutine(SpawnStoreWave());
+        }
+        else if (isBossWave == false && isStoreWave == false)
+        {
             enemiesToSpawn++;
             StartCoroutine(SpawnWave());
         }
-
-        waveNumber++;
-        waveText.text = "Onda: " + waveNumber;
     }
 
     void UpdateCountdown()
     {
         countText.text = Mathf.Round(countdown).ToString();
-    }
-
-    public void EnemyDestroyed()
-    {
-        if (enemiesRemaining <= 0)
-        {
-            StartNewWave();
-        }
     }
 }

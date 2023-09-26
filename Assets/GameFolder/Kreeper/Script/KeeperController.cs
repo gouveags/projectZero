@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KeeperController : MonoBehaviour
 {
-    public float velKeeper;
+    public int speed;
     public Transform Skin;
     public Transform KeeperRange;
     public bool goRight;
@@ -19,6 +19,8 @@ public class KeeperController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speed = Random.Range(3, 6);
+
         if (GetComponent<Character>().life <= 0)
         {
             KeeperRange.GetComponent<CircleCollider2D>().enabled = false;
@@ -46,8 +48,9 @@ public class KeeperController : MonoBehaviour
             Skin.localScale = new Vector3(-1, 1, 1);
         }
 
+        
         // Move towards the player on the X-axis
-        float step = velKeeper * Time.deltaTime;
+        float step = speed * Time.deltaTime;
         Vector3 targetPosition = Player.transform.position;
         targetPosition.y = transform.position.y; // Mantém a mesma altura do inimigo
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);

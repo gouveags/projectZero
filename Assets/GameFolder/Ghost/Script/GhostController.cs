@@ -6,7 +6,7 @@ public class GhostController : MonoBehaviour
 {
  
     public Transform Skin;
-    public float velGhot;
+    public int speed;
     public bool goRight;
     GameObject Player;
     public Transform lifeBar;
@@ -20,6 +20,8 @@ public class GhostController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speed = Random.Range(3, 6);
+
         if (GetComponent<Character>().life <= 0)
         {
             this.enabled = false;
@@ -50,7 +52,7 @@ public class GhostController : MonoBehaviour
         if (Vector2.Distance(transform.position, targetPosition) > 0.5f)
         {
             attackTime = 0;
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 3.0f * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         }
         else
         {
