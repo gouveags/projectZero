@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
         isStoreWave = false; // Marca que a wave da loja não está mais ativa.
 
         // Reinicia as waves normais.
-        enemiesToSpawn++;
+       // enemiesToSpawn++;
         StartCoroutine(SpawnWave());
     }
 
