@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class SkeletonController : MonoBehaviour
 {
-    public Transform a;
-    public Transform b;
+ 
     public float velSkeleton;
     public Transform Skin;
     public Transform SkeletonRange;
     public bool goRight;
     GameObject Player;
+   
 
 
 
@@ -19,6 +19,7 @@ public class SkeletonController : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindWithTag("Player");
+        
 
     }
 

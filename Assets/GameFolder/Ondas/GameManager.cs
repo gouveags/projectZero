@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public Transform bossSpawnPoint;
     public float timeBetweenWaves = 3f;
     private float countdown;
-    private int waveNumber = 0;
+    public int waveNumber = 10;
     private int enemiesToSpawn;
     public int enemiesRemaining;
     private bool isBossWave = false;
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
             Transform spawnTransform = Random.Range(0f, 1f) > 0.5f ? spawnPoint : spawnPoint2;
             SpawnEnemy(spawnTransform);
             SpawnEnemy3();
-            float randomSpawnDelay = Random.Range(0.1f, 1.0f);
+            float randomSpawnDelay = Random.Range(1, 3);
             yield return new WaitForSeconds(randomSpawnDelay);
         }
     }
@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
         isStoreWave = false; // Marca que a wave da loja não está mais ativa.
 
         // Reinicia as waves normais.
-       // enemiesToSpawn++;
+        enemiesToSpawn++;
         StartCoroutine(SpawnWave());
     }
 

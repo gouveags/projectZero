@@ -157,7 +157,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1006318949
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1236822649, guid: 87f15c1ec4eeaa845931cb4ebcdd05c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Skin: {fileID: 7317241882673901312}
-  velGhot: 7
+  speed: 0
   goRight: 0
   lifeBar: {fileID: 1556249313405105132}
   attackTime: 1
