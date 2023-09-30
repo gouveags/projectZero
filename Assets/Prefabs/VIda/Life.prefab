@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 2855868455303606719}
   - component: {fileID: 2855868455303606717}
   - component: {fileID: 2855868455303606716}
-  - component: {fileID: 3269523248430632632}
+  - component: {fileID: 4774030255999555054}
+  - component: {fileID: 3816183333207870704}
   m_Layer: 0
   m_Name: Life
   m_TagString: Untagged
@@ -101,9 +102,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.009809114}
   serializedVersion: 2
-  m_Radius: 0.08
+  m_Radius: 0.07301172
 --- !u!95 &2855868455303606717
 Animator:
   serializedVersion: 5
@@ -137,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1997a2ac5166605428b06d186723b392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &3269523248430632632
+--- !u!50 &4774030255999555054
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -149,12 +150,28 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 5
+--- !u!70 &3816183333207870704
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2855868455303606713}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0006594698, y: 0.009274722}
+  m_Size: {x: 0.039263204, y: 0.13567162}
+  m_Direction: 0

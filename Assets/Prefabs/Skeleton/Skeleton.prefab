@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 1714684499894264409}
   - component: {fileID: 1714684499894264408}
   - component: {fileID: 1714684499894264410}
+  - component: {fileID: 7451390370923724393}
   m_Layer: 6
   m_Name: Skeleton
   m_TagString: Enemy
@@ -216,8 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d81afd63acce2448c5eb7ea1c1561b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  a: {fileID: 0}
-  b: {fileID: 0}
   velSkeleton: 3
   Skin: {fileID: 1714684499209826345}
   SkeletonRange: {fileID: 1714684500639338800}
@@ -253,10 +252,30 @@ MonoBehaviour:
   life: 1
   Skin: {fileID: 1714684499209826345}
   Cam: {fileID: 0}
-  heartCountText: {fileID: 0}
-  Heart: {fileID: 0}
   audioSouce: {fileID: 0}
   groundedSound: {fileID: 0}
+  itemDropManager: {fileID: 0}
+--- !u!50 &7451390370923724393
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714684499894264414}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
 --- !u!1 &1714684500639338807
 GameObject:
   m_ObjectHideFlags: 0
