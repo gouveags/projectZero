@@ -20,7 +20,20 @@ public class KeeperAttackCollider : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Character>().PlayerDamege(Random.Range(1, 3));
+
+            bool shieldActive = collision.GetComponent<Character>().shieldActive;
+
+            if (shieldActive)
+            {
+                // Causar dano ao escudo
+                collision.GetComponent<Character>().ShieldDamage(Random.Range(1, 2));
+               
+            }
+            else
+            {
+                // Causar dano ao jogador
+                collision.GetComponent<Character>().PlayerDamage(Random.Range(1, 2));
+            }
             
         }
     }

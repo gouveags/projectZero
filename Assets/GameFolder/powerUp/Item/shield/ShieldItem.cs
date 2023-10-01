@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnightAttackCollider : MonoBehaviour
+public class ShieldItem : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,11 +15,13 @@ public class KnightAttackCollider : MonoBehaviour
     {
         
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Character>().PlayerDamage(Random.Range(1, 3));
+            collision.GetComponent<Character>().shieldActive = (true);
+            Destroy(gameObject);
 
         }
     }

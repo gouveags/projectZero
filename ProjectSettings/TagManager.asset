@@ -9,6 +9,8 @@ TagManager:
   - StartCheckpoint
   - Imune
   - Store
+  - StoreWaveNPC
+  - shield
   layers:
   - Default
   - TransparentFX

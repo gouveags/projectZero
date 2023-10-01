@@ -20,7 +20,23 @@ public class SkeletonAttackCollider : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Character>().PlayerDamege(Random.Range(2, 5));
+            if (collision.CompareTag("Player"))
+            {
+
+                bool shieldActive = collision.GetComponent<Character>().shieldActive;
+
+                if (shieldActive)
+                {
+                    // Causar dano ao escudo
+                    collision.GetComponent<Character>().ShieldDamage(Random.Range(2, 5));
+                }
+                else
+                {
+                    // Causar dano ao jogador
+                    collision.GetComponent<Character>().PlayerDamage(Random.Range(2, 5));
+                }
+
+            }
 
 
         }

@@ -19,7 +19,7 @@ public class FireCollider : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Character>().PlayerDamege(Random.Range(1, 2));
+            collision.GetComponent<Character>().PlayerDamage(Random.Range(1, 2));
 
         }
     }

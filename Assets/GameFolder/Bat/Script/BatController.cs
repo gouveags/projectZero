@@ -42,7 +42,20 @@ public class BatController : MonoBehaviour
             if (attackTime >= 0.3f)
             {
                 attackTime = 0;
-                Player.GetComponent<Character>().PlayerDamege(Random.Range(1, 2));
+                // Verificar se o escudo do jogador está ativo
+                bool shieldActive = Player.GetComponent<Character>().shieldActive;
+
+                if (shieldActive)
+                {
+                    // Causar dano ao escudo
+                    Player.GetComponent<Character>().ShieldDamage(Random.Range(1, 2));
+                }
+                else
+                {
+                    // Causar dano ao jogador
+                    Player.GetComponent<Character>().PlayerDamage(Random.Range(1, 2));
+                }
+               
             }
         }
     }
