@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     public Text waveText;
     public Text countText;
 
+    private float tempoDecorrido = 0f; // Tempo total decorrido em segundos
+    public float tempoPasso = 1f; // Taxa de atualização em segundos
+
     void Start()
     {
         UpdateCountdown();
@@ -56,6 +59,17 @@ public class GameManager : MonoBehaviour
         {
             isBossWave = false;
         }
+
+        // Adiciona o tempoPasso ao tempoDecorrido a cada frame.
+        tempoDecorrido += Time.deltaTime;
+
+        // Calcula as horas, minutos e segundos.
+        int horas = Mathf.FloorToInt(tempoDecorrido / 3600);
+        int minutos = Mathf.FloorToInt((tempoDecorrido % 3600) / 60);
+        int segundos = Mathf.FloorToInt(tempoDecorrido % 60);
+
+        // Exibe o tempo no formato HH:MM:SS no Text "waveText".
+        waveText.text = "Onda: " + waveNumber + " | Tempo: " + horas.ToString("D2") + ":" + minutos.ToString("D2") + ":" + segundos.ToString("D2");
     }
 
     IEnumerator SpawnWave()
