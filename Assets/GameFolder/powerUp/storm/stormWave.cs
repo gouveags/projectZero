@@ -46,8 +46,6 @@ public class stormWave : MonoBehaviour
         
         if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("Entrei");
-         
             collision.GetComponent<Character>().life--;
             collision.GetComponent<Character>().Skin.GetComponent<Animator>().Play("Hit", -1);
             cam.GetComponent<Animator>().Play("CamPlayerDamge", -1);
