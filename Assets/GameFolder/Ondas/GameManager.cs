@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
         int segundos = Mathf.FloorToInt(tempoDecorrido % 60);
 
         // Exibe o tempo no formato HH:MM:SS no Text "waveText".
-        waveText.text = "Onda: " + waveNumber + " | Tempo: " + horas.ToString("D2") + ":" + minutos.ToString("D2") + ":" + segundos.ToString("D2");
+        waveText.text = "Onda: " + waveNumber + " | " + horas.ToString("D2") + ":" + minutos.ToString("D2") + ":" + segundos.ToString("D2");
     }
 
     IEnumerator SpawnWave()

@@ -139,10 +139,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") != 0 && comboNum >= 1)
         {
             animator.SetBool("PlayerRunSword", true);
+            animator.SetBool("PlayerRun", false);
         }
         else
         {
             animator.SetBool("PlayerRunSword", false);
+           
         }
 
         if (!isGrounded && rb.velocity.y > 0)
