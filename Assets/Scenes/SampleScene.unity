@@ -1798,6 +1798,8 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 2670488736778012117, guid: e17db9bfb1d4cc946994488e019ea8f5, type: 3}
   - {fileID: 2477809942543471023, guid: 95d8566bb8fdebf498dbf46817219705, type: 3}
+  - {fileID: 5668819424644298506, guid: 4a0786d84b192e14daf8bd8c2f06391c, type: 3}
+  - {fileID: 5971188141361493082, guid: b712986339702f74e9a00075b7024dc1, type: 3}
   bossPrefabs:
   - {fileID: 1714684499894264414, guid: 121c085a58f9f9c428a962e800b7b042, type: 3}
   storePrefab: {fileID: 6718984110787658377, guid: 07647d84680f3534da92e597bbc16a6d, type: 3}

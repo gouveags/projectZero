@@ -29,11 +29,12 @@ public class KeeperController : MonoBehaviour
             GetComponent<KeeperController>().lifeBar.localScale = new Vector3(0, 1, 1);
         }
 
-        if (Skin.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("KeeperAttack"))
+        if (Skin.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
             return;
         }
 
+        
         // Calculate the direction vector from the enemy to the player
         Vector3 directionToPlayer = Player.transform.position - transform.position;
         directionToPlayer.y = 0; // Make sure the enemy only follows on the X-axis

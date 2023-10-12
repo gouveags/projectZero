@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeeperRange : MonoBehaviour
+public class EnemyRange : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class KeeperRange : MonoBehaviour
         if (collision.CompareTag("Player") || collision.CompareTag("shield"))
         {
 
-            transform.parent.GetComponent<Animator>().Play("KeeperAttack", -1);
+            transform.parent.GetComponent<Animator>().Play("Attack", -1);
 
         }
     }
