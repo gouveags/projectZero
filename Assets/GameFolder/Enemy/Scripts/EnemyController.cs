@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoblinController : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
-    public int speed;
+    public int Speed;
     public Transform Skin;
-    public Transform GoblinRange;
+    public Transform Range;
     GameObject Player;
-    public Transform lifeBar;
+    public Transform LifeBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +18,11 @@ public class GoblinController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = Random.Range(3, 6);
+        Speed = Random.Range(3, 6);
 
         if (GetComponent<Character>().life <= 0)
         {
-            GoblinRange.GetComponent<CircleCollider2D>().enabled = false;
+            Range.GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<CapsuleCollider2D>().enabled = false;
             this.enabled = false;
             GetComponent<GoblinController>().lifeBar.localScale = new Vector3(0, 1, 1);
@@ -31,7 +31,7 @@ public class GoblinController : MonoBehaviour
         {
             return;
         }
-       
+
         // Calculate the direction vector from the enemy to the player
         Vector3 directionToPlayer = Player.transform.position - transform.position;
         directionToPlayer.y = 0; // Make sure the enemy only follows on the X-axis
@@ -48,7 +48,7 @@ public class GoblinController : MonoBehaviour
 
 
         // Move towards the player on the X-axis
-        float step = speed * Time.deltaTime;
+        float step = Speed * Time.deltaTime;
         Vector3 targetPosition = Player.transform.position;
         targetPosition.y = transform.position.y; // Mantém a mesma altura do inimigo
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
@@ -57,6 +57,7 @@ public class GoblinController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        lifeBar.localScale = new Vector3(GetComponent<Character>().life / 10f, 1, 1);
+        LifeBar.localScale = new Vector3(GetComponent<Character>().life / 10f, 1, 1);
     }
 }
+ 

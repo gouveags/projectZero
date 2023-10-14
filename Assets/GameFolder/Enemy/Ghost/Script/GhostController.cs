@@ -5,10 +5,9 @@ using UnityEngine;
 public class GhostController : MonoBehaviour
 {
     public Transform Skin;
-    public int speed;
-    public bool goRight;
+    public int Speed;
     GameObject Player;
-    public Transform lifeBar;
+    public Transform LifeBar;
     public float attackTime;
 
     void Start()
@@ -18,7 +17,7 @@ public class GhostController : MonoBehaviour
 
     void Update()
     {
-        speed = Random.Range(3, 6);
+       Speed = Random.Range(3, 6);
 
         if (GetComponent<Character>().life <= 0)
         {
@@ -26,7 +25,7 @@ public class GhostController : MonoBehaviour
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<Rigidbody2D>().gravityScale = 6;
             Destroy(gameObject, 1f);
-            GetComponent<GhostController>().lifeBar.localScale = new Vector3(0, 1, 1);
+            GetComponent<GhostController>().LifeBar.localScale = new Vector3(0, 1, 1);
         }
 
         Vector3 directionToPlayer = Player.transform.position - transform.position;
@@ -45,7 +44,7 @@ public class GhostController : MonoBehaviour
         if (Vector2.Distance(transform.position, targetPosition) > 0.5f)
         {
             attackTime = 0;
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, Speed * Time.deltaTime);
         }
         else
         {
@@ -74,6 +73,6 @@ public class GhostController : MonoBehaviour
 
     void FixedUpdate()
     {
-        lifeBar.localScale = new Vector3(GetComponent<Character>().life / 10f, 1, 1);
+        LifeBar.localScale = new Vector3(GetComponent<Character>().life / 10f, 1, 1);
     }
 }

@@ -157,10 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Skin: {fileID: 2477809942516433497}
-  Cam: {fileID: 0}
-  speed: 0
-  goRight: 0
-  lifeBar: {fileID: 5941949109740510901}
+  Speed: 0
+  LifeBar: {fileID: 5941949109740510901}
   attackTime: 1
 --- !u!58 &2477809942543471011
 CircleCollider2D:
@@ -190,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d06ad785b0f5c0498d43052b9362d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 1
+  life: 10
   shieldLife: 0
   shieldActive: 0
   Skin: {fileID: 2477809942516433497}

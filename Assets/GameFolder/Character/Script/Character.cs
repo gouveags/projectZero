@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Character : MonoBehaviour
 {
     public int life;
+    public int MaxLife;
     public int shieldLife;
     public bool shieldActive;
     public Transform Skin;
@@ -21,6 +22,12 @@ public class Character : MonoBehaviour
 
     void Update()
     {
+
+        if (life >= MaxLife)
+        {
+            life = MaxLife;
+        }
+
         if (life <= 0 && !hasDroppedItem)
         {
             DropRandomItem(); // Chama a função de drop apenas se o item ainda não tiver sido dropado.

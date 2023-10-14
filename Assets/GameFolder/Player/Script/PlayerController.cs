@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private int life;
+    private int MaxLife;
     private Vector2 vel;
     public Transform floor;
     public LayerMask FloorLayer;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         // Inicialização de variáveis
         life = GetComponent<Character>().life;
+        MaxLife = GetComponent<Character>().MaxLife;
         rb = GetComponent<Rigidbody2D>();
         animator = skin.GetComponent<Animator>();
         transform.position = CheckpointController.currentCheckpoint;
@@ -41,16 +43,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
         // Atualização de informações a cada quadro
-        heartCountText.text = "x" + GetComponent<Character>().life.ToString();
+        heartCountText.text = GetComponent<Character>().life.ToString() + "/" + MaxLife;
+      
         animator.SetBool("isGrounded", isGrounded);
 
-        // Lógica para lidar com a vida do jogador
-        if (life <= 5 && life >= 1)
-        {
-            Heart.GetComponent<Animator>().Play("HeartWarning", -1);
-        }
-        else if (life <= 0)
+       
+
+        if (life <= 0)
         {
             // Jogador morreu
             Destroy(gameObject, 2f);
