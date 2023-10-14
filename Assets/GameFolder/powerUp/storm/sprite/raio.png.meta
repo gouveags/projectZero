@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 39d0912b47ff03e4dab842a7f51f6c5d
+guid: 82c8f02f0e979cf499d9a7e5b7b2483d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Artboard 1_0
+      name: raio_1
       rect:
         serializedVersion: 2
-        x: 61
-        y: 72
-        width: 47
-        height: 250
+        x: 224
+        y: 0
+        width: 76
+        height: 278
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd9560a60701fb2478908983424b3fea
-      internalID: -920849525
+      spriteID: 0bdfece1320d830488221044996b5dd6
+      internalID: 1448962218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Artboard 1_1
+      name: raio_2
       rect:
         serializedVersion: 2
-        x: 154
-        y: 72
-        width: 80
-        height: 250
+        x: 353
+        y: 0
+        width: 79
+        height: 278
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0f2965c9df023b40b7751f872c2cd03
-      internalID: 464738394
+      spriteID: 31902a130720453418dd44b434855c53
+      internalID: -1559347503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Artboard 1_2
+      name: raio_4
       rect:
         serializedVersion: 2
-        x: 270
-        y: 72
-        width: 90
-        height: 250
+        x: 16
+        y: 0
+        width: 32
+        height: 278
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 780abe4883ae01e45a6f04b9a1d87597
-      internalID: -979703904
+      spriteID: c5426b6296266b8459037d92dc0c6ced
+      internalID: -1126601527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Artboard 1_3
+      name: raio_5
       rect:
         serializedVersion: 2
-        x: 394
-        y: 73
-        width: 95
-        height: 250
+        x: 109
+        y: 0
+        width: 71
+        height: 278
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad0093ae3b1ca2d418f5463f66f75be0
-      internalID: 1205262426
+      spriteID: 95bfd6996b4fbb84abb8623d766e072d
+      internalID: -234405714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Artboard 1_4
+      name: raio_15
       rect:
         serializedVersion: 2
-        x: 533
-        y: 72
-        width: 104
-        height: 250
+        x: 488
+        y: 0
+        width: 97
+        height: 278
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0044fe19aa64556498dce6fea0f9abe5
-      internalID: 614298021
+      spriteID: a1ff42ad7d0e3ae4a85df80fc9284f7a
+      internalID: -112644013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Artboard 1_5
+      name: raio_25
       rect:
         serializedVersion: 2
-        x: 648
-        y: 73
-        width: 65
-        height: 250
+        x: 607
+        y: 0
+        width: 51
+        height: 278
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5538c55a4cfbfd4e96300275c3a220e
-      internalID: -1411298746
+      spriteID: 0a5229a834779254fb18e603195f1fb7
+      internalID: -1153361591
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Artboard 1_6
+      name: raio_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 71
-        width: 47
-        height: 253
+        x: 311
+        y: 0
+        width: 30
+        height: 278
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,8 +245,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce8cafeca5244dd488a443dc04caa0bf
-      internalID: 2038038254
+      spriteID: ce6af8cd1a6f9f7449903c0dc6f8eeee
+      internalID: 130629420
       vertices: []
       indices: 
       edges: []
@@ -262,13 +262,32 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Artboard 1_0: -920849525
-      Artboard 1_1: 464738394
-      Artboard 1_2: -979703904
-      Artboard 1_3: 1205262426
-      Artboard 1_4: 614298021
-      Artboard 1_5: -1411298746
-      Artboard 1_6: 2038038254
+      raio_0: 130629420
+      raio_1: 1448962218
+      raio_10: -1559347503
+      raio_11: -1069305868
+      raio_12: -1126601527
+      raio_13: -234405714
+      raio_14: -644885474
+      raio_15: 1577761066
+      raio_16: -166399304
+      raio_17: 904942477
+      raio_18: -381966639
+      raio_19: 1175423349
+      raio_2: -1687479379
+      raio_20: 144845133
+      raio_21: 1300692704
+      raio_22: -112644013
+      raio_23: -1943888813
+      raio_24: -231428081
+      raio_25: 466301878
+      raio_3: -189331489
+      raio_4: 347771998
+      raio_5: -1762519590
+      raio_6: 108451696
+      raio_7: 2061103079
+      raio_8: -801889566
+      raio_9: -1153361591
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
