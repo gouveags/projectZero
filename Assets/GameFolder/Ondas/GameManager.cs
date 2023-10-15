@@ -21,13 +21,15 @@ public class GameManager : MonoBehaviour
     public int enemiesRemaining;
     private bool isBossWave = false;
     private bool isStoreWave = false;
+    private bool isGamePaused = false; // Adicione este campo para controlar a pausa
 
     public Text CoinCountText;
     public Text waveText;
     public Text countText;
+    public GameObject pausePanel; // Adicione um painel para o menu de pausa
 
-    private float tempoDecorrido = 0f; // Tempo total decorrido em segundos
-    public float tempoPasso = 1f; // Taxa de atualização em segundos
+    private float tempoDecorrido = 0f;
+    public float tempoPasso = 1f;
 
     void Start()
     {
@@ -37,39 +39,65 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (enemiesRemaining == 0)
+        if (!isGamePaused) // Só atualiza o jogo se não estiver pausado
         {
-            countdown -= Time.deltaTime;
-            UpdateCountdown();
-
-            if (countdown <= 0f)
+            if (enemiesRemaining == 0)
             {
-                StartNewWave();
+                countdown -= Time.deltaTime;
+                UpdateCountdown();
+
+                if (countdown <= 0f)
+                {
+                    StartNewWave();
+                }
             }
+
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+            if (enemies.Length <= 0 && !isStoreWave)
+            {
+                enemiesRemaining = 0;
+            }
+
+            if (isBossWave == true && enemies.Length == 0)
+            {
+                isBossWave = false;
+            }
+
+            tempoDecorrido += Time.deltaTime;
         }
 
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        if (enemies.Length <= 0 && !isStoreWave)
-        {
-            enemiesRemaining = 0;
-        }
-
-        if (isBossWave == true && enemies.Length == 0)
-        {
-            isBossWave = false;
-        }
-
-        // Adiciona o tempoPasso ao tempoDecorrido a cada frame.
-        tempoDecorrido += Time.deltaTime;
-
-        // Calcula as horas, minutos e segundos.
         int horas = Mathf.FloorToInt(tempoDecorrido / 3600);
         int minutos = Mathf.FloorToInt((tempoDecorrido % 3600) / 60);
         int segundos = Mathf.FloorToInt(tempoDecorrido % 60);
 
-        // Exibe o tempo no formato HH:MM:SS no Text "waveText".
         waveText.text = "Onda: " + waveNumber + " | " + horas.ToString("D2") + ":" + minutos.ToString("D2") + ":" + segundos.ToString("D2");
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isGamePaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
+    }
+
+    void PauseGame()
+    {
+        isGamePaused = true;
+        Time.timeScale = 0; // Pausa o tempo do jogo
+        pausePanel.SetActive(true); // Ativa o painel de pausa
+    }
+
+    void ResumeGame()
+    {
+        isGamePaused = false;
+        Time.timeScale = 1; // Retoma o tempo do jogo
+        pausePanel.SetActive(false); // Desativa o painel de pausa
     }
 
     IEnumerator SpawnWave()
