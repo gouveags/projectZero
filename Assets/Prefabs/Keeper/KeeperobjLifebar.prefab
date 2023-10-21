@@ -503,6 +503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 10
+  MaxLife: 0
   shieldLife: 0
   shieldActive: 0
   Skin: {fileID: 2670488734890559141}
@@ -510,6 +511,7 @@ MonoBehaviour:
   audioSouce: {fileID: 0}
   groundedSound: {fileID: 0}
   itemDropManager: {fileID: 4942827645690036424, guid: 176004b737f94384fb5cc3ad0a8f1506, type: 3}
+  damageTextPrefab: {fileID: 0}
 --- !u!50 &1030664820220653493
 Rigidbody2D:
   serializedVersion: 4
