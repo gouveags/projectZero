@@ -25,6 +25,6 @@ public class AttackUp : MonoBehaviour
             AttackColider.GetComponent<AttackCollider>().danoPlayer = 5;          
             Destroy(gameObject);
 
-      }
+        }
     }
 }

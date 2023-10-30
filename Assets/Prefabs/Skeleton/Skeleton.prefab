@@ -249,7 +249,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d06ad785b0f5c0498d43052b9362d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 1
+  life: 15
+  MaxLife: 0
+  shieldLife: 0
+  shieldActive: 0
   Skin: {fileID: 1714684499209826345}
   Cam: {fileID: 0}
   audioSouce: {fileID: 0}

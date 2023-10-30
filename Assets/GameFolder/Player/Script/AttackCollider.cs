@@ -11,18 +11,6 @@ public class AttackCollider : MonoBehaviour
     public AudioClip groundedSound;
     public int danoPlayer = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
@@ -30,7 +18,7 @@ public class AttackCollider : MonoBehaviour
         {
             if(player.GetComponent<PlayerController>().comboNum == 1) { 
             
-                collision.GetComponent<Character>().life-= (danoPlayer + 1) ;
+                collision.GetComponent<Character>().life-= (danoPlayer + Random.Range(1,3)) ;
                 collision.GetComponent<Character>().Skin.GetComponent<Animator>().Play("Hit",-1);
                 cam.GetComponent<Animator>().Play("CamPlayerDamge", -1);
                 audioSouce.PlayOneShot(groundedSound, 0.5f);
@@ -38,7 +26,7 @@ public class AttackCollider : MonoBehaviour
             }
             else {
 
-                collision.GetComponent<Character>().life -= (danoPlayer + 2);
+                collision.GetComponent<Character>().life -= (danoPlayer + Random.Range(3,6));
                 collision.GetComponent<Character>().Skin.GetComponent<Animator>().Play("Hit");
                 cam.GetComponent<Animator>().Play("CamPlayerDamge", -1);
                 audioSouce.PlayOneShot(groundedSound, 0.5f);

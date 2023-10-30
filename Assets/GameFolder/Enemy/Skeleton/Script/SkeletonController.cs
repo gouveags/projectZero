@@ -4,23 +4,16 @@ using UnityEngine;
 
 public class SkeletonController : MonoBehaviour
 {
- 
     public float velSkeleton;
     public Transform Skin;
     public Transform SkeletonRange;
     public bool goRight;
     GameObject Player;
    
-
-
-
-
     // Start is called before the first frame update
     void Start()
     {
         Player = GameObject.FindWithTag("Player");
-        
-
     }
 
     // Update is called once per frame
