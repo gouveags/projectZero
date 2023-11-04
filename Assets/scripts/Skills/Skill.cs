@@ -6,6 +6,7 @@ public class Skill : MonoBehaviour
  {
     public Transform storm;
     public Transform spike;
+    public Transform attack;
 
     // Start is called before the first frame update
     void Start()
@@ -23,27 +24,24 @@ public class Skill : MonoBehaviour
     {
         if (collision.CompareTag("AttackUp"))
         {
-            GetComponent<AttackCollider>().danoPlayer = 5;
-            Destroy(gameObject);
+            attack.GetComponent<AttackCollider>().danoPlayer = 5;
+        
 
         }
         if (collision.CompareTag("StormItem"))
         {
             storm.gameObject.SetActive(true);
-            Destroy(gameObject);
 
         }
         
         if (collision.CompareTag("ShieldItem"))
         {
-            collision.GetComponent<Character>().shieldActive = (true);
-            Destroy(gameObject);
+            GetComponent<Character>().shieldActive = (true);
         }
         
         if (collision.CompareTag("Spike"))
         {
             spike.gameObject.SetActive(true);
-            Destroy(gameObject);
 
         }
     }

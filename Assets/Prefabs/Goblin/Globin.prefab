@@ -320,6 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 10
+  MaxLife: 10
   shieldLife: 0
   shieldActive: 0
   Skin: {fileID: 5668819423823774475}
@@ -342,7 +343,6 @@ MonoBehaviour:
   speed: 0
   Skin: {fileID: 5668819423823774475}
   GoblinRange: {fileID: 5668819424861546433}
-  goRight: 0
   lifeBar: {fileID: 5668819423429271057}
 --- !u!50 &5668819424644298549
 Rigidbody2D:
@@ -491,7 +491,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5668819424861546438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0cde9c7200f7804b99f21b800017f03, type: 3}
+  m_Script: {fileID: 11500000, guid: de38717a03c4e5b43a49b17824633baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!58 &5668819424861546432

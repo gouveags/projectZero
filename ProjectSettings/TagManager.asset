@@ -11,6 +11,10 @@ TagManager:
   - Store
   - StoreWaveNPC
   - shield
+  - StormItem
+  - AttackUp
+  - ShieldItem
+  - Spike
   layers:
   - Default
   - TransparentFX
