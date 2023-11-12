@@ -6,7 +6,7 @@ public class PlataformController : MonoBehaviour
 {
     public Transform a;
     public Transform b;
-    public float velPlataform;
+    public float velObj;
     public bool goRight;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class PlataformController : MonoBehaviour
 
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, b.position, velPlataform * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, b.position, velObj * Time.deltaTime);
         }
         else
         {
@@ -37,7 +37,7 @@ public class PlataformController : MonoBehaviour
 
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, a.position, velPlataform * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, a.position, velObj * Time.deltaTime);
         }
     }
     
