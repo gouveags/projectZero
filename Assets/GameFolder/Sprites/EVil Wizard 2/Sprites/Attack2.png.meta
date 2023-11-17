@@ -108,12 +108,12 @@ TextureImporter:
       name: Attack2_6
       rect:
         serializedVersion: 2
-        x: 1081
+        x: 1083
         y: 82
-        width: 162
-        height: 131
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        width: 160
+        height: 129
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -129,12 +129,12 @@ TextureImporter:
       name: Attack2_8
       rect:
         serializedVersion: 2
-        x: 109
+        x: 89
         y: 83
-        width: 72
+        width: 160
         height: 109
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,7 +152,7 @@ TextureImporter:
         serializedVersion: 2
         x: 334
         y: 83
-        width: 72
+        width: 160
         height: 107
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -173,8 +173,8 @@ TextureImporter:
         serializedVersion: 2
         x: 581
         y: 83
-        width: 75
-        height: 116
+        width: 160
+        height: 114
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,8 +194,8 @@ TextureImporter:
         serializedVersion: 2
         x: 832
         y: 83
-        width: 75
-        height: 124
+        width: 160
+        height: 122
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,12 +213,12 @@ TextureImporter:
       name: Attack2_19
       rect:
         serializedVersion: 2
-        x: 1580
+        x: 1592
         y: 83
-        width: 153
+        width: 141
         height: 131
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -234,12 +234,12 @@ TextureImporter:
       name: Attack2_21
       rect:
         serializedVersion: 2
-        x: 1335
-        y: 82
-        width: 153
-        height: 135
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 1338
+        y: 85
+        width: 148
+        height: 133
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -255,12 +255,12 @@ TextureImporter:
       name: Attack2_22
       rect:
         serializedVersion: 2
-        x: 1831
+        x: 1832
         y: 82
-        width: 94
+        width: 141
         height: 87
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

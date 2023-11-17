@@ -2067,6 +2067,8 @@ MonoBehaviour:
   - {fileID: 5668819424644298506, guid: 4a0786d84b192e14daf8bd8c2f06391c, type: 3}
   - {fileID: 5971188141361493082, guid: b712986339702f74e9a00075b7024dc1, type: 3}
   - {fileID: 752032444432266239, guid: b937afa008b9d164b9747fa17fa1401f, type: 3}
+  - {fileID: 4628338848208302542, guid: c05c2c9861ce2fa40bffcfbcbdb6487d, type: 3}
+  - {fileID: 2041063333099877259, guid: be09c7a8bbbd9e940ad5f7ef186e01dd, type: 3}
   bossPrefabs:
   - {fileID: 2995491110367327050, guid: b60ff984087fda64bb7fff525c830590, type: 3}
   - {fileID: 4162841304942448499, guid: 7aa6d9466cb103b4ea0382b2cd34f254, type: 3}
