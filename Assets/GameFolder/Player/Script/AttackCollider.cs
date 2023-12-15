@@ -13,7 +13,7 @@ public class AttackCollider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+       
         if (collision.CompareTag("Enemy"))
         {
             if(player.GetComponent<PlayerController>().comboNum == 1) { 
@@ -35,8 +35,5 @@ public class AttackCollider : MonoBehaviour
         }
 
     }
-
-
-
 
 }

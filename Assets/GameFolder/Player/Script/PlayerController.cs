@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public Text CoinCountText;
     public Text heartCountText;
     public Transform Heart;
+    public int dash = 400;
 
     void Start()
     {
@@ -75,7 +76,7 @@ public class PlayerController : MonoBehaviour
             dashTime = 0;
             skin.GetComponent<Animator>().Play("PlayerDash", -1);
             rb.velocity = Vector2.zero;
-            rb.AddForce(new Vector2(skin.localScale.x * 400, 0));
+            rb.AddForce(new Vector2(skin.localScale.x * dash, 0));
             rb.gravityScale = 0;
         }
         if (dashTime > 0.3f)
