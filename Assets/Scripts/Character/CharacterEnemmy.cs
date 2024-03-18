@@ -1,14 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Character : MonoBehaviour
+public class CharacterEnemmy : MonoBehaviour
 {
     public int life;
     public int MaxLife;
-    public int shieldLife;
-    public bool shieldActive;
     public Transform Skin;
-    public Transform Cam;
+    public Transform Camera;
     public AudioSource audioSouce;
     public AudioClip groundedSound;
     public ItemDropManager itemDropManager; // Referência ao ItemDropManager.
@@ -41,53 +39,21 @@ public class Character : MonoBehaviour
     public void PlayerDamage(int value)
     {
 
-        if (shieldActive)
-        {
-           
-            ShieldDamage(value);
-        }
-        else
-        {
+      
             life -= value;
             Skin.GetComponent<Animator>().Play("PlayerDamage", 1);
             audioSouce.PlayOneShot(groundedSound, 0.5f);
-            // Verifique se o jogador foi derrotado
-            if (life <= 0)
+            Camera.GetComponent<Animator>().Play("CamPlayerDamage", -1);
+
+        // Verifique se o jogador foi derrotado
+        if (life <= 0)
             {
                 // Implemente qualquer lógica adicional quando o jogador for derrotado.
             }
-        }
+      
     }
 
-    public void ActivateShield(int initialShieldLife)
-    {
-        shieldActive = true;
-        shieldLife = initialShieldLife;
-    }
-
-    public void DeactivateShield()
-    {
-        shieldActive = false;
-    }
-
-    public void ShieldDamage(int damageAmount)
-    {
-        if (shieldActive)
-        {
-            
-            shieldLife -= damageAmount;
-            Cam.GetComponent<Animator>().Play("CamPlayerDamage", -1);
-
-
-            // Verifique se o escudo foi destruído
-            if (shieldLife <= 0)
-            {
-                DeactivateShield();
-                // Implemente qualquer lógica adicional quando o escudo for destruído.
-            }
-        }
-    }
-
+  
     void DropRandomItem()
     {
         if (itemDropManager != null)

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KeeperAttackCollider : MonoBehaviour
 {
+    public Transform Camera;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,11 +29,13 @@ public class KeeperAttackCollider : MonoBehaviour
                 // Causar dano ao escudo
                 collision.GetComponent<Character>().ShieldDamage(Random.Range(1, 2));
                
+
             }
             else
             {
                 // Causar dano ao jogador
                 collision.GetComponent<Character>().PlayerDamage(Random.Range(1, 2));
+               
             }
             
         }

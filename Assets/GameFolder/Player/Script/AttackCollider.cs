@@ -18,17 +18,17 @@ public class AttackCollider : MonoBehaviour
         {
             if(player.GetComponent<PlayerController>().comboNum == 1) { 
             
-                collision.GetComponent<Character>().life-= (danoPlayer + Random.Range(1,2)) ;
-                collision.GetComponent<Character>().Skin.GetComponent<Animator>().Play("Hit",-1);
-                cam.GetComponent<Animator>().Play("CamPlayerDamge", -1);
+                collision.GetComponent<CharacterEnemmy>().life-= (danoPlayer + Random.Range(1,2)) ;
+                collision.GetComponent<CharacterEnemmy>().Skin.GetComponent<Animator>().Play("Hit",-1);
+                cam.GetComponent<Animator>().Play("CamPlayerDamage", -1);
                 audioSouce.PlayOneShot(groundedSound, 0.5f);
 
             }
             else {
 
-                collision.GetComponent<Character>().life -= (danoPlayer + Random.Range(2,3));
-                collision.GetComponent<Character>().Skin.GetComponent<Animator>().Play("Hit");
-                cam.GetComponent<Animator>().Play("CamPlayerDamge", -1);
+                collision.GetComponent<CharacterEnemmy>().life -= (danoPlayer + Random.Range(2,3));
+                collision.GetComponent<CharacterEnemmy>().Skin.GetComponent<Animator>().Play("Hit");
+                cam.GetComponent<Animator>().Play("CamPlayerDamage", -1);
                 audioSouce.PlayOneShot(groundedSound, 0.5f);
 
             }

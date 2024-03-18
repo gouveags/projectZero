@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ab4670fc127d74fb2acb5a0e80af4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Camera: {fileID: 4323240377477587411, guid: eaa7beadda6b508439084dbfc540648f, type: 3}
 --- !u!1 &1756673525926444856
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1756673525926444857}
   - component: {fileID: 1756673525926444860}
-  - component: {fileID: 1756673525926444862}
+  - component: {fileID: 907810907902448808}
   - component: {fileID: 3684549405710882136}
   - component: {fileID: 4426913195778707369}
   m_Layer: 6
@@ -176,7 +177,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0.003171429, y: 0.1288161}
   m_Size: {x: 0.14965048, y: 0.25320154}
   m_Direction: 0
---- !u!114 &1756673525926444862
+--- !u!114 &907810907902448808
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,15 +186,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1756673525926444856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d06ad785b0f5c0498d43052b9362d0b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8323f62d11596cc48a65d5d897260afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 1
-  MaxLife: 1
-  shieldLife: 0
-  shieldActive: 0
+  life: 10
+  MaxLife: 10
   Skin: {fileID: 1756673526220061768}
-  Cam: {fileID: 0}
+  Camera: {fileID: 4323240377477587411, guid: eaa7beadda6b508439084dbfc540648f, type: 3}
   audioSouce: {fileID: 0}
   groundedSound: {fileID: 0}
   itemDropManager: {fileID: 4942827645690036424, guid: 176004b737f94384fb5cc3ad0a8f1506, type: 3}

@@ -8,6 +8,8 @@ public class batEyeController : MonoBehaviour
     GameObject Player;
     public float attackTime;
     public Transform skin;
+    bool isStunned = false;
+    float stunTimer = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,10 +21,23 @@ public class batEyeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isStunned)
+        {
+            stunTimer += Time.deltaTime;
+            if (stunTimer >= 1f)
+            {
+                isStunned = false;
+                stunTimer = 0f;
+            }
+            else
+            {
+                return; // Se estiver atordoado, não faça nada
+            }
+        }
 
         speed = Random.Range(3, 6);
 
-        if (GetComponent<Character>().life <= 0)
+        if (GetComponent<CharacterEnemmy>().life <= 0)
         {
             this.enabled = false;
             GetComponent<CircleCollider2D>().enabled = false;
@@ -71,6 +86,7 @@ public class batEyeController : MonoBehaviour
                     skin.GetComponent<Animator>().Play("attack", -1);
                 }
 
+                isStunned = true; // Ativar o atordoamento
             }
         }
     }

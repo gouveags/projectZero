@@ -20,7 +20,7 @@ public class enemyController : MonoBehaviour
     {
         speed = Random.Range(3, 6);
 
-        if (GetComponent<Character>().life <= 0)
+        if (GetComponent<CharacterEnemmy>().life <= 0)
         {
             enemyRanger.GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<CapsuleCollider2D>().enabled = false;
@@ -59,6 +59,6 @@ public class enemyController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        lifeBar.localScale = new Vector3(GetComponent<Character>().life / (float)GetComponent<Character>().MaxLife, 1, 1);
+        lifeBar.localScale = new Vector3(GetComponent<CharacterEnemmy>().life / (float)GetComponent<CharacterEnemmy>().MaxLife, 1, 1);
     }
 }

@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
         if ((Input.GetButtonDown("Fire1") && comboTime > 0.5f) || (isJumping && Input.GetButtonDown("Fire1") && comboTime > 0.5f))
         {
             comboNum++;
-            if (comboNum > 2)
+            if (comboNum > 3)
             {
                 comboNum = 1;
             }
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
             skin.GetComponent<Animator>().Play("PlayerAttack" + comboNum, -1);
             audioSource.PlayOneShot(groundedSound, 0.05f);
         }
-        if (comboTime >= 2)
+        if (comboTime >= 3)
         {
             comboNum = 0;
         }

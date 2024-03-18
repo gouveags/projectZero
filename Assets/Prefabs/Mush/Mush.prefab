@@ -251,6 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4162841304942448501}
   - component: {fileID: 4162841304942448503}
+  - component: {fileID: -2312153064935405825}
   - component: {fileID: 4162841304942448500}
   - component: {fileID: 4162841304942448489}
   - component: {fileID: 4162841304942448502}
@@ -293,6 +294,25 @@ MonoBehaviour:
   Skin: {fileID: 4162841304950485724}
   enemyRanger: {fileID: 4162841303584449627}
   lifeBar: {fileID: 4162841303148325445}
+--- !u!114 &-2312153064935405825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4162841304942448499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8323f62d11596cc48a65d5d897260afd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 10
+  MaxLife: 10
+  Skin: {fileID: 4162841304950485724}
+  Camera: {fileID: 0}
+  audioSouce: {fileID: 0}
+  groundedSound: {fileID: 0}
+  itemDropManager: {fileID: 0}
 --- !u!114 &4162841304942448500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +333,7 @@ MonoBehaviour:
   Cam: {fileID: 0}
   audioSouce: {fileID: 0}
   groundedSound: {fileID: 0}
-  itemDropManager: {fileID: 0}
+  itemDropManager: {fileID: 4942827645690036424, guid: 176004b737f94384fb5cc3ad0a8f1506, type: 3}
 --- !u!70 &4162841304942448489
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
