@@ -5,9 +5,9 @@ using UnityEngine;
 public class SpikeOrbit : MonoBehaviour
 {
 
-    public Transform pontoCentral; // O ponto central da órbita.
-    public float raio = 2.0f; // O raio da órbita.
-    public float velocidadeRotacao = 50.0f; // A velocidade de rotação.
+    public Transform pontoCentral; // O ponto central da ï¿½rbita.
+    public float raio = 2.0f; // O raio da ï¿½rbita.
+    public float velocidadeRotacao = 50.0f; // A velocidade de rotaï¿½ï¿½o.
     public Transform cam;
     private float angulo = 0.0f;
 
@@ -20,11 +20,11 @@ public class SpikeOrbit : MonoBehaviour
     {
         angulo += velocidadeRotacao * Time.deltaTime;
 
-        // Calcula a nova posição com base no ponto central e no raio.
+        // Calcula a nova posiï¿½ï¿½o com base no ponto central e no raio.
         float x = pontoCentral.position.x + raio * Mathf.Cos(angulo * Mathf.Deg2Rad);
         float y = pontoCentral.position.y + raio * Mathf.Sin(angulo * Mathf.Deg2Rad);
 
-        // Define a nova posição do objeto.
+        // Define a nova posiï¿½ï¿½o do objeto.
         transform.position = new Vector3(x, y, transform.position.z);
     }
 
@@ -33,8 +33,8 @@ public class SpikeOrbit : MonoBehaviour
 
         if (collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<Character>().life--;
-            collision.GetComponent<Character>().Skin.GetComponent<Animator>().Play("Hit", -1);
+            collision.GetComponent<CharacterEnemmy>().life--;
+            collision.GetComponent<CharacterEnemmy>().Skin.GetComponent<Animator>().Play("Hit", -1);
             cam.GetComponent<Animator>().Play("CamPlayerDamge", -1);
 
         }
