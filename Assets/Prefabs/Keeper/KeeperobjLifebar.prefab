@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 907810907902448808}
   - component: {fileID: 3684549405710882136}
   - component: {fileID: 4426913195778707369}
+  - component: {fileID: 7304716508021755391}
   m_Layer: 6
   m_Name: KeeperobjLifebar
   m_TagString: Enemy
@@ -229,9 +230,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1e3ae4c54672a489e818d725d675dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Skin: {fileID: 1756673526220061768}
   enemyRanger: {fileID: 1756673525064240188}
   lifeBar: {fileID: 3859228311482187513}
+--- !u!114 &7304716508021755391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756673525926444856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3303f404ac6b4748ad516d03310cb99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Skin: {fileID: 1756673526220061768}
 --- !u!1 &1756673526220061771
 GameObject:
   m_ObjectHideFlags: 0
