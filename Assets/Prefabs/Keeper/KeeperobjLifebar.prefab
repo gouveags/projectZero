@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Skin: {fileID: 1756673526220061768}
+  life: 0
 --- !u!1 &1756673526220061771
 GameObject:
   m_ObjectHideFlags: 0

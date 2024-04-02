@@ -38,8 +38,6 @@ public class CharacterEnemmy : MonoBehaviour
 
     public void PlayerDamage(int value)
     {
-
-      
             life -= value;
             Skin.GetComponent<Animator>().Play("PlayerDamage", 1);
             audioSouce.PlayOneShot(groundedSound, 0.5f);

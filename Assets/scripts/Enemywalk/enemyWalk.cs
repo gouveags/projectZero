@@ -6,7 +6,8 @@ public class enemyWalk : MonoBehaviour
 {
     GameObject Player;
     public Transform Skin;
-     int speed;
+    int speed;
+    public int life;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,14 +17,15 @@ public class enemyWalk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = Random.Range(3, 6);
+        life = GetComponent<CharacterEnemmy>().life;
+        speed = Random.Range(2, 3);
 
-         if (Skin.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        
+        if (life <=0)
         {
-            return;
-        }
-
-
+            this.enabled = false;
+        } 
+        
         // Calculate the direction vector from the enemy to the player
         Vector3 directionToPlayer = Player.transform.position - transform.position;
         directionToPlayer.y = 0; // Make sure the enemy only follows on the X-axis

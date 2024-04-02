@@ -12,6 +12,7 @@ public class RangCollider : MonoBehaviour
 
             transform.parent.GetComponent<Animator>().Play("Attack", -1);
 
+
         }
     }
 }
